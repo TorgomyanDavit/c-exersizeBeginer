@@ -110,6 +110,8 @@ int arrayInit() {
 
     /** 4. what is output this mixen logic */
     // reverseTwo2(x, length);
+    
+
 
     /** Pointers */
     // int *x;
