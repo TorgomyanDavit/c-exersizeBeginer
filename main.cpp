@@ -726,3 +726,10 @@ int main() {
     getParentMain();
     return 0;
 }
+
+
+// number > 0x0001 = {2, 4, 6, 8, 10, 12}; 
+// *ptr   > 0x0002 = 0x0003
+// temp   > 0x0003 = 2
+
+

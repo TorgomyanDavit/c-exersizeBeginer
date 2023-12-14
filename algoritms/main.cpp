@@ -1,11 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
-#include <climits>
-#include <cstdint>
-#include <cfloat>
-
-
 /** Bubble Sort: +  Time Complexity O(n^2) worst*/             
 // int* bubbleSort(int *arr,int length) {
 //     int *sortedArray = arr;
@@ -137,127 +132,95 @@
 // int main() {
 //     int arr[] = {12, 11, 13, 5, 6, 7};
 //     int length = sizeof(arr) / sizeof(arr[0]);
+
 //     std::cout << "Original array: ";
 //     for (int i = 0; i < length; i++) {
 //         std::cout << arr[i] << " ";
 //     }
+
 //     insertion(arr,length);
+
 //     cout << "\nSorted array: ";
 //     for (int i = 0; i < length; i++) {
 //         cout << arr[i] << " ";
 //     }
+
 //     return 0;
 // }
 
 
-// void merge(std::vector<int>& arr, int left, int middle, int right) {
-//     int leftSize = middle - left + 1;
-//     int rightSize = right - middle;
+void merge(std::vector<int>& arr, int left, int middle, int right) {
+    int leftSize = middle - left + 1;
+    int rightSize = right - middle;
     
-//     std::vector<int> leftArray(arr.begin() + left, arr.begin() + left + leftSize);
-//     std::vector<int> rightArray(arr.begin() + middle + 1, arr.begin() + middle + 1 + rightSize);
+    std::vector<int> leftArray(arr.begin() + left, arr.begin() + left + leftSize);
+    std::vector<int> rightArray(arr.begin() + middle + 1, arr.begin() + middle + 1 + rightSize);
 
-//     int i = 0, j = 0, k = left;
+    int i = 0, j = 0, k = left;
 
-//     while (i < leftSize && j < rightSize) {
-//         if (leftArray[i] <= rightArray[j]) {
-//             arr[k] = leftArray[i];
-//             i++;
-//         } else {
-//             arr[k] = rightArray[j];
-//             j++;
-//         }
-//         k++;
-//     }
+    while (i < leftSize && j < rightSize) {
+        if (leftArray[i] <= rightArray[j]) {
+            arr[k] = leftArray[i];
+            i++;
+        } else {
+            arr[k] = rightArray[j];
+            j++;
+        }
+        k++;
+    }
 
-//     while (i < leftSize) {
-//         arr[k] = leftArray[i];
-//         i++;
-//         k++;
-//     }
+    while (i < leftSize) {
+        arr[k] = leftArray[i];
+        i++;
+        k++;
+    }
 
-//     while (j < rightSize) {
-//         arr[k] = rightArray[j];
-//         j++;
-//         k++;
-//     }
-// }
+    while (j < rightSize) {
+        arr[k] = rightArray[j];
+        j++;
+        k++;
+    }
+}
 
-// void mergeSort(std::vector<int>& arr, int left, int right) {
-//     if (left < right) {
-//         int middle = left + (right - left) / 2;
-//         mergeSort(arr, left, middle);
-//         mergeSort(arr, middle + 1, right);
-//         merge(arr, left, middle, right);
-//     }
-// }
+void mergeSort(std::vector<int>& arr, int left, int right) {
+    if (left < right) {
+        int middle = left + (right - left) / 2;
+        mergeSort(arr, left, middle);
+        mergeSort(arr, middle + 1, right);
+        merge(arr, left, middle, right);
+    }
+}
 
-// int main() {
-//     std::vector<int> arr = {12, 11, 13, 5, 6, 7};
+int main() {
+    std::vector<int> arr = {12, 11, 13, 5, 6, 7};
 
-//     std::cout << "Original array: ";
-//     for (int num : arr) std::cout << num << " ";
-//     std::cout << std::endl;
+    std::cout << "Original array: ";
+    for (int num : arr) std::cout << num << " ";
+    std::cout << std::endl;
 
-//     mergeSort(arr, 0, arr.size() - 1);
+    mergeSort(arr, 0, arr.size() - 1);
 
-//     std::cout << "Sorted array: ";
-//     for (int num : arr) std::cout << num << " ";
-//     std::cout << std::endl;
+    std::cout << "Sorted array: ";
+    for (int num : arr) std::cout << num << " ";
+    std::cout << std::endl;
 
-//     return 0;
-// }
+    return 0;
+}
 
+
+
+
+
+ 
 // Bubble Sort + ancnum e hertakanutyamb ev amenamec element swapi ognuyamb brtuma araj; Time Complexity O(n^2)
 // Selection Sort + gtnum e amenapoqr element@ ev qacuma araj, heto tenc sharunakabar minchev avartvi indexner@; Time Complexity O(n^2) 
 // quickSort +  bajanum e  Pivot, Left and right maseri ev anyndhat nuyn@ minchev verj, and finishily concat its all recurioon  O(n^2)
 // Insertion Sort: + stugum e hetevi ev dimacin@ ete meca het het gnalov noric krknuma ev mecer@ qay ar qayl het qaylerov dasavoruma hertakanutyamb O(n^2)
 // Merge Sort: + merge sort@ ogtagorcvum e shat ,  O(n log n).   
-
-
-
-
-void getAllTypeValueMax() {
-    std::cout << "Maximum and Minimum values for integer types:" << std::endl;
-
-    // char
-    std::cout << "char: " << CHAR_BIT << " bits, " << CHAR_BIT / 8 << " bytes, " << static_cast<int>(SCHAR_MIN) << " to " << static_cast<int>(SCHAR_MAX) << std::endl;
-    std::cout << "unsigned char: " << CHAR_BIT << " bits, " << CHAR_BIT / 8 << " bytes, " << 0 << " to " << static_cast<unsigned int>(UCHAR_MAX) << std::endl;
-
-    // short
-    std::cout << "short int: " << sizeof(short) * CHAR_BIT << " bits, " << sizeof(short) << " bytes, " << SHRT_MIN << " to " << SHRT_MAX << std::endl;
-    std::cout << "unsigned short int: " << sizeof(unsigned short) * CHAR_BIT << " bits, " << sizeof(unsigned short) << " bytes, " << 0 << " to " << static_cast<unsigned int>(USHRT_MAX) << std::endl;
-
-    // int
-    std::cout << "int: " << sizeof(int) * CHAR_BIT << " bits, " << sizeof(int) << " bytes, " << INT_MIN << " to " << INT_MAX << std::endl;
-    std::cout << "unsigned int: " << sizeof(unsigned int) * CHAR_BIT << " bits, " << sizeof(unsigned int) << " bytes, " << 0 << " to " << UINT_MAX << std::endl;
-
-    // long
-    std::cout << "long int: " << sizeof(long) * CHAR_BIT << " bits, " << sizeof(long) << " bytes, " << LONG_MIN << " to " << LONG_MAX << std::endl;
-    std::cout << "unsigned long int: " << sizeof(unsigned long) * CHAR_BIT << " bits, " << sizeof(unsigned long) << " bytes, " << 0 << " to " << ULONG_MAX << std::endl;
-
-    // long long
-    std::cout << "long long int: " << sizeof(long long) * CHAR_BIT << " bits, " << sizeof(long long) << " bytes, " << LLONG_MIN << " to " << LLONG_MAX << std::endl;
-    std::cout << "unsigned long long int: " << sizeof(unsigned long long) * CHAR_BIT << " bits, " << sizeof(unsigned long long) << " bytes, " << 0 << " to " << ULLONG_MAX << std::endl;
-
-    // float
-    std::cout << "float: " << FLT_MANT_DIG << " bits, " << sizeof(float) << " bytes, " << FLT_MIN << " to " << FLT_MAX << std::endl;
-
-    // bool
-    std::cout << "bool: At least " << sizeof(bool) * CHAR_BIT << " bits, " << sizeof(bool) / 8 << " bytes, " << false << " to " << true << std::endl;
-
-    // double
-    std::cout << "double: " << DBL_MANT_DIG << " bits, " << sizeof(double) << " bytes, " << DBL_MIN << " to " << DBL_MAX << std::endl;
-
-    // Increment and Decrement
-    int x = INT_MAX;
-    std::cout << "Increment INT_MAX: " << ++x << std::endl; // Increment INT_MAX
-    x = INT_MIN;
-    std::cout << "Decrement INT_MIN: " << --x << std::endl; // Decrement INT_MIN
-}
-
-int main() {
-    getAllTypeValueMax();
-    return 0;
-}
-
+// Heap Sort: 
+// Counting Sort:
+// Radix Sort:
+// Bucket Sort:
+// Tim Sort:
+// Cocktail Sort:
+// Gnome Sort: 

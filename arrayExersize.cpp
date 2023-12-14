@@ -29,9 +29,18 @@ void reverse(int arr[], int length) {
         arr[leftIndex] = arr[rightIndex];
         arr[rightIndex] = temp;
 
-
         leftIndex++;
         rightIndex--;
+    }
+
+    printArray(arr, length);
+}
+
+void reverseTwo2(int* arr, int length) {
+    for (int i = 0; i < length / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[length - i - 1];
+        arr[length - i - 1] = temp;
     }
 
     printArray(arr, length);
@@ -55,29 +64,25 @@ int complexLogicExampleOne1() {
 
 int complexLogicExampleTwo2() {
     const int length = 6;
-    int numbers[length] = {2, 4, 6, 8, 10, 12};
+    int numbers[length] = {2, 4, 6, 8, 10, 12}; 
     int *ptr = numbers;
 
     int temp = *ptr;
     *ptr = *(ptr + length - 1);
     *(ptr + length - 1) = temp;
 
+
+    // numbers >> {12, 4, 6, 8, 10, 2}; 
     for (int i = 0; i < length; ++i) {
         *(ptr + i) *= 2;
     }
 
+    // numbers >> {24, 8, 12, 16, 20, 4}; 
     int sum = 0;
     for (int i = 0; i < length; ++i) {
         sum += *(ptr + i);
     }
 
-    std::cout << "Modified array: ";
-    for (int i = 0; i < length; ++i) {
-        std::cout << *(ptr + i) << " ";
-    }
-    std::cout << std::endl;
-
-    std::cout << "Sum of array elements: " << sum << std::endl;
 
     return 0;
 }
@@ -101,23 +106,10 @@ int arrayInit() {
     // complexLogicExampleOne1();
 
     /** 4. what is output this mixen logic */
-    complexLogicExampleTwo2();
+    // complexLogicExampleTwo2();
 
-
-
-
-    
-
-    
-
-
-
-
-
-
-
-
-
+    /** 4. what is output this mixen logic */
+    // reverseTwo2(x, length);
 
     /** Pointers */
     // int *x;
