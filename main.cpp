@@ -1,5 +1,7 @@
 #include "./all_int_bite_value.cpp"
 #include "./arrayExersize.cpp"
+#include "./sortingAlgoritm.cpp"
+
 
 #include <iostream>
 #include <cstdint> // Include the necessary header for int8_t
@@ -572,17 +574,48 @@ using namespace std;// if use (using namespace std) cout << "Hello world" << end
 
 // Lessons 15 exersize Pointers type 
 
-int f(int x,int*py,int **ppz) {
-    int y;
-    int z;
-    **ppz += 1;
-    z = **ppz; 
-    *py += 2;
-    y = *py;
-    x += 3;
+// int f(int x,int*py,int **ppz) {
+//     int y;
+//     int z;
+//     **ppz += 1;
+//     z = **ppz; 
+//     *py += 2;
+//     y = *py;
+//     x += 3;
 
-    return x + y + z;
-}
+//     return x + y + z;
+// }
+
+// լեսսօնս 16
+/** Pointers */
+// int *x;
+// int y = 6;
+// x = &y;
+// y = 80;
+// *x += 5;
+// std::cout << "Size of int: " << y << std::endl;
+
+
+// int a = 500;
+// int b = 10;
+// int *d = &a;
+// int *z = &b;
+// d = z;
+// *d += 20;
+// std::cout << "Size of int: " << a << std::endl;
+// std::cout << "Size of int: " << b << std::endl;
+
+
+// int x[10] = {1,2,3,4,5};
+/** this way know array length */
+// std::cout << "console " << sizeof(x) / sizeof(int) << std::endl;
+
+// int x[10] = {155,92,3,4,5};
+// int *xPtr = x;
+// x = x + 1;
+// std::cout << "console " << *(x) << std::endl;
+// std::cout << "length " << sizeof(x) / sizeof(int) << std::endl;
+
 
 
 /*
@@ -715,7 +748,8 @@ void getCharValue() {
 void getParentMain() {
     // getColoredText();
     // getCharValue();
-    arrayInit();
+    // arrayInit();
+    sortingAlgoritm();
 }
 
 // important to know all types bytes

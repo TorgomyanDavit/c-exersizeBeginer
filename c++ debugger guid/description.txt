@@ -1,0 +1,2 @@
+go to terminal and << run build task >>
+go to vs code << Run >> then Start << debugger >>

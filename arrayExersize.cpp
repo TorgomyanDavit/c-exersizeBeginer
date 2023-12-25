@@ -69,8 +69,9 @@ int complexLogicExampleTwo2() {
 
     int temp = *ptr;
     *ptr = *(ptr + length - 1);
-    *(ptr + length - 1) = temp;
+    std::cout << "console " << *ptr <<  std::endl;
 
+    *(ptr + length - 1) = temp;
 
     // numbers >> {12, 4, 6, 8, 10, 2}; 
     for (int i = 0; i < length; ++i) {
@@ -89,8 +90,8 @@ int complexLogicExampleTwo2() {
 
 int arrayInit() {
     /** Array  exercize*/
-    int x[] = {1, 2, 3, 4, 5};
-    int length = sizeof(x) / sizeof(int);
+    // int x[] = {1, 2, 3, 4, 5};
+    // int length = sizeof(x) / sizeof(int);
 
     /** logic */
     /** 1. write print array logic */
@@ -110,40 +111,6 @@ int arrayInit() {
 
     /** 4. what is output this mixen logic */
     // reverseTwo2(x, length);
-    
-
-
-    /** Pointers */
-    // int *x;
-    // int y = 6;
-    // x = &y;
-    // y = 80;
-    // *x += 5;
-    // std::cout << "Size of int: " << y << std::endl;
-
-
-    // int a = 500;
-    // int b = 10;
-    // int *d = &a;
-    // int *z = &b;
-    // d = z;
-    // *d += 20;
-    // std::cout << "Size of int: " << a << std::endl;
-    // std::cout << "Size of int: " << b << std::endl;
-
-
-    // int x[10] = {1,2,3,4,5};
-    /** this way know array length */
-    // std::cout << "console " << sizeof(x) / sizeof(int) << std::endl;
-
-    // int x[10] = {155,92,3,4,5};
-    // int *xPtr = x;
-    // x = x + 1;
-    // std::cout << "console " << *(x) << std::endl;
-    // std::cout << "length " << sizeof(x) / sizeof(int) << std::endl;
-
-    
-
 
     return 0; // Assum
 
