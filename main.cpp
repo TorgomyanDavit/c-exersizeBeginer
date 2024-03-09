@@ -1,6 +1,8 @@
 #include "./all_int_bite_value.cpp"
 #include "./arrayExersize.cpp"
 #include "./sortingAlgoritm.cpp"
+#include "./char.cpp"
+
 
 
 #include <iostream>
@@ -18,8 +20,22 @@
 using namespace std;// if use (using namespace std) cout << "Hello world" << endl you can write without std:: typing;
 
 
+/**struct */
+// class EmptyClass {
+//     int a = 55;
+// };
+// EmptyClass obj;
+// char myLetter = 97; 
 
+// struct {
+//     int myNum;
+// } myStructure;
 
+// myStructure.myNum = 5;
+// std::cout << myStructure.myNum << std::endl;
+
+// std::cout << "Size of an empty class: " << sizeof(obj) <<  std::endl;
+// std::cout << myLetter << std::endl;
 
 /* Lessons 1 console.log(""Hello world"") */
 // int main() {
@@ -736,25 +752,103 @@ using namespace std;// if use (using namespace std) cout << "Hello world" << end
 
 
 
-class EmptyClass {};
-void getCharValue() {
-    EmptyClass obj;
-    char myLetter = 97; 
 
-    std::cout << "Size of an empty class: " << sizeof(obj) <<  std::endl;
-    std::cout << myLetter << std::endl;
+
+
+
+int sum(int k) {
+    int result = 0;
+    for (int i = 1; i <= k; ++i) {
+        result += i;
+    }
+    return result;
 }
 
+class MyClass {       // The class
+    public:             // Access specifier
+        int myNum;        // Attribute (int variable)
+        string myString;  // Attribute (string variable)
+
+    public:              // Access specifier
+        void myMethod() {  // Method/function defined inside the class
+        cout << "Hello World!" << "\n";
+    }
+
+    public:              // Access specifier
+        void myMethod2();
+};
+
+// Method/function definition outside the class
+void MyClass::myMethod2() {
+    cout << "Hello World!";
+}
+
+
+void getExampleClass() {
+    string cars[] = {"Volvo", "BMW", "Ford"}; // Also three array elements
+    int length = sizeof(string);
+    string letters[3][4] = {
+        { "A", "B", "C", "D" },
+        { "E", "F", "G", "H" },
+        { "E", "F", "G", "H" }
+    };
+    // cout << letters[0][2];  // Outputs "C"
+
+    struct {
+        string brand;
+        string model;
+        int year;
+    } myCar1, myCar2; // We can add variables by separating them with a comma here
+
+    myCar1.brand = "BMW";
+    myCar2.brand = "MERCEDES";
+    // cout << myCar1.brand << "\n";  
+    // cout << myCar2.brand << "\n";  
+
+
+    string food = "Pizza";
+    string *meal = &food;
+    // cout << &food << "\n";
+    // cout << meal << "\n";
+
+    int result = sum(10);
+    // cout << result ;
+
+    // class MyClass {       // The class
+    //     // public:             // Access specifier
+    //     //     int myNum;        // Attribute (int variable)
+    //     //     string myString;  // Attribute (string variable)
+
+    //     // public:              // Access specifier
+    //     //     void myMethod() {  // Method/function defined inside the class
+    //     //     cout << "Hello World!" << "\n";
+    //     // }
+
+    //     public:              // Access specifier
+    //         void myMethod();
+    // };
+
+
+    MyClass myObj; 
+    myObj.myNum = 15; 
+    myObj.myMethod();
+    // cout << myObj.myNum << "\n";
+
+}
+
+
 void getParentMain() {
+    // getExampleClass();
     // getColoredText();
-    // getCharValue();
+    getCharValue();
     // arrayInit();
-    sortingAlgoritm();
+    // sortingAlgoritm();
 }
 
 // important to know all types bytes
 int main() {
     getAllTypeValueMax();
+
 
     /* start*/
     getParentMain();
