@@ -17,7 +17,7 @@
 
 
 // #include <cstdind>
-using namespace std;// if use (using namespace std) cout << "Hello world" << endl you can write without std:: typing;
+// using namespace std;// if use (using namespace std) cout << "Hello world" << endl you can write without std:: typing;
 
 
 /**struct */
@@ -753,88 +753,85 @@ using namespace std;// if use (using namespace std) cout << "Hello world" << end
 
 
 
+// int sum(int k) {
+//     int result = 0;
+//     for (int i = 1; i <= k; ++i) {
+//         result += i;
+//     }
+//     return result;
+// }
+
+// class MyClass {       // The class
+//     public:             // Access specifier
+//         int myNum;        // Attribute (int variable)
+//         string myString;  // Attribute (string variable)
+
+//     public:              // Access specifier
+//         void myMethod() {  // Method/function defined inside the class
+//         cout << "Hello World!" << "\n";
+//     }
+
+//     public:              // Access specifier
+//         void myMethod2();
+// };
+
+// // Method/function definition outside the class
+// void MyClass::myMethod2() {
+//     cout << "Hello World!";
+// }
 
 
+// void getExampleClass() {
+//     string cars[] = {"Volvo", "BMW", "Ford"}; // Also three array elements
+//     int length = sizeof(string);
+//     string letters[3][4] = {
+//         { "A", "B", "C", "D" },
+//         { "E", "F", "G", "H" },
+//         { "E", "F", "G", "H" }
+//     };
+//     // cout << letters[0][2];  // Outputs "C"
 
-int sum(int k) {
-    int result = 0;
-    for (int i = 1; i <= k; ++i) {
-        result += i;
-    }
-    return result;
-}
+//     struct {
+//         string brand;
+//         string model;
+//         int year;
+//     } myCar1, myCar2; // We can add variables by separating them with a comma here
 
-class MyClass {       // The class
-    public:             // Access specifier
-        int myNum;        // Attribute (int variable)
-        string myString;  // Attribute (string variable)
-
-    public:              // Access specifier
-        void myMethod() {  // Method/function defined inside the class
-        cout << "Hello World!" << "\n";
-    }
-
-    public:              // Access specifier
-        void myMethod2();
-};
-
-// Method/function definition outside the class
-void MyClass::myMethod2() {
-    cout << "Hello World!";
-}
+//     myCar1.brand = "BMW";
+//     myCar2.brand = "MERCEDES";
+//     // cout << myCar1.brand << "\n";  
+//     // cout << myCar2.brand << "\n";  
 
 
-void getExampleClass() {
-    string cars[] = {"Volvo", "BMW", "Ford"}; // Also three array elements
-    int length = sizeof(string);
-    string letters[3][4] = {
-        { "A", "B", "C", "D" },
-        { "E", "F", "G", "H" },
-        { "E", "F", "G", "H" }
-    };
-    // cout << letters[0][2];  // Outputs "C"
+//     string food = "Pizza";
+//     string *meal = &food;
+//     // cout << &food << "\n";
+//     // cout << meal << "\n";
 
-    struct {
-        string brand;
-        string model;
-        int year;
-    } myCar1, myCar2; // We can add variables by separating them with a comma here
+//     int result = sum(10);
+//     // cout << result ;
 
-    myCar1.brand = "BMW";
-    myCar2.brand = "MERCEDES";
-    // cout << myCar1.brand << "\n";  
-    // cout << myCar2.brand << "\n";  
+//     // class MyClass {       // The class
+//     //     // public:             // Access specifier
+//     //     //     int myNum;        // Attribute (int variable)
+//     //     //     string myString;  // Attribute (string variable)
 
+//     //     // public:              // Access specifier
+//     //     //     void myMethod() {  // Method/function defined inside the class
+//     //     //     cout << "Hello World!" << "\n";
+//     //     // }
 
-    string food = "Pizza";
-    string *meal = &food;
-    // cout << &food << "\n";
-    // cout << meal << "\n";
-
-    int result = sum(10);
-    // cout << result ;
-
-    // class MyClass {       // The class
-    //     // public:             // Access specifier
-    //     //     int myNum;        // Attribute (int variable)
-    //     //     string myString;  // Attribute (string variable)
-
-    //     // public:              // Access specifier
-    //     //     void myMethod() {  // Method/function defined inside the class
-    //     //     cout << "Hello World!" << "\n";
-    //     // }
-
-    //     public:              // Access specifier
-    //         void myMethod();
-    // };
+//     //     public:              // Access specifier
+//     //         void myMethod();
+//     // };
 
 
-    MyClass myObj; 
-    myObj.myNum = 15; 
-    myObj.myMethod();
-    // cout << myObj.myNum << "\n";
+//     MyClass myObj; 
+//     myObj.myNum = 15; 
+//     myObj.myMethod();
+//     // cout << myObj.myNum << "\n";
 
-}
+// }
 
 
 void getParentMain() {
@@ -848,6 +845,9 @@ void getParentMain() {
 // important to know all types bytes
 int main() {
     getAllTypeValueMax();
+    int x = 5;
+    int y = 5;
+
 
 
     /* start*/
