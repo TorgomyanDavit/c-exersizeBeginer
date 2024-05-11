@@ -2,6 +2,8 @@
 #include "./arrayExersize.cpp"
 #include "./sortingAlgoritm.cpp"
 #include "./char.cpp"
+#include "./repeatLessons.cpp"
+
 
 
 
@@ -837,16 +839,22 @@
 void getParentMain() {
     // getExampleClass();
     // getColoredText();
-    getCharValue();
+    // getCharValue();
     // arrayInit();
     // sortingAlgoritm();
+
+
+    // Կրկնում եմ անցացը
+
+    RepeatLessons();
+
+
+
 }
 
 // important to know all types bytes
 int main() {
     getAllTypeValueMax();
-    int x = 5;
-    int y = 5;
 
 
 
