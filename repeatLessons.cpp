@@ -5,6 +5,14 @@ using namespace std;
 void RepeatLessons() {
     cout << "=== Start Lessons ===" << endl;
 
-    int x = 10;
-    std::cout << x << "\n";
+    int age = 7;
+
+
+    {
+        {
+            int age = 5;
+        }
+    }
+
+    std::cout << age << "\n";
 }

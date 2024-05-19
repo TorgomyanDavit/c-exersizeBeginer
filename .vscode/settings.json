@@ -45,6 +45,9 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "bit": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp"
     }
 }
