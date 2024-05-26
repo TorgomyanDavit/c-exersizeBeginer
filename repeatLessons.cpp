@@ -1,5 +1,18 @@
 #include <iostream>
+#include <type_traits>
+#include <string>
 using namespace std;
+
+template <typename T>
+std::string getType(const T&) {
+    if (std::is_same<T, int>::value) return "int";
+    if (std::is_same<T, double>::value) return "double";
+    if (std::is_same<T, float>::value) return "float";
+    if (std::is_same<T, bool>::value) return "bool";
+    if (std::is_same<T, char>::value) return "char";
+    if (std::is_same<T, std::string>::value) return "std::string";
+    return "unknown";
+}
 
 void STD_CIN_LESSONS() {
     int count;
@@ -37,10 +50,12 @@ void IF_AND_ELSE_LESSONS() {
 
     std::cout << "what is => (count > 10) r "<< typeid(r).name()  <<  "\n";
     std::cout << "what is "<< true <<  "\n";
-    std::cout << "what is "<< false <<  "\n";
+    std::cout << "type is "<< getType(r) << "\n";
 
-
+    
 }
+
+
 
 
 void RepeatLessons() {
