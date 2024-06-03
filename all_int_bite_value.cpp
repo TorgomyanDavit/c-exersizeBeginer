@@ -16,7 +16,7 @@
 // important to know all types bytes
 void getAllTypeValueMax() {
     
-    std::cout << "Maximum and Minimum values for integer types:" << std::endl;
+    std::cout << "=== Maximum and Minimum values for integer types ===" << std::endl;
 
     // char
     std::cout << "char: " << CHAR_BIT << " bits, " << CHAR_BIT / 8 << " bytes, " << static_cast<int>(SCHAR_MIN) << " to " << static_cast<int>(SCHAR_MAX) << std::endl;
