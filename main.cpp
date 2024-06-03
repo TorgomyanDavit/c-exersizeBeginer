@@ -2,10 +2,13 @@
 #include "./arrayExersize.cpp"
 #include "./sortingAlgoritm.cpp"
 #include "./char.cpp"
+#include "./file.cpp"
+
 
 
 
 #include <iostream>
+#include <fstream> // Required for file handling
 #include <cstdint> // Include the necessary header for int8_t
 #include <cmath>
 #include <limits>
@@ -833,31 +836,45 @@
 
 // }
 
-
+// number > 0x0001 = {2, 4, 6, 8, 10, 12}; 
+// *ptr   > 0x0002 = 0x0003
+// temp   > 0x0003 = 2
 void getParentMain() {
     // getExampleClass();
     // getColoredText();
-    getCharValue();
+    // getCharValue();
     // arrayInit();
     // sortingAlgoritm();
 }
 
+
+
+
+
+
 // important to know all types bytes
 int main() {
     getAllTypeValueMax();
-    int x = 5;
-    int y = 5;
+    // FilePattern();
+
+    int age = 10;
+    int uncle_age = 15;
+
+
+    {
+        int uncle_age = 50;
+        {
+            int uncle_age = 100;
+            std::cout << age + uncle_age;
+        }
+    }
+
+
+
 
 
 
     /* start*/
-    getParentMain();
+    // getParentMain();
     return 0;
 }
-
-
-// number > 0x0001 = {2, 4, 6, 8, 10, 12}; 
-// *ptr   > 0x0002 = 0x0003
-// temp   > 0x0003 = 2
-
-
