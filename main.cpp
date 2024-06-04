@@ -2,12 +2,17 @@
 #include "./arrayExersize.cpp"
 #include "./sortingAlgoritm.cpp"
 #include "./char.cpp"
+<<<<<<< HEAD
+#include "./file.cpp"
+=======
 #include "./repeatLessons.cpp"
+>>>>>>> 7c4f59e2ab842c81d2945679c90d10152a37bf4d
 
 
 
 
 #include <iostream>
+#include <fstream> // Required for file handling
 #include <cstdint> // Include the necessary header for int8_t
 #include <cmath>
 #include <limits>
@@ -835,7 +840,9 @@
 
 // }
 
-
+// number > 0x0001 = {2, 4, 6, 8, 10, 12}; 
+// *ptr   > 0x0002 = 0x0003
+// temp   > 0x0003 = 2
 void getParentMain() {
     // getExampleClass();
     // getColoredText();
@@ -852,6 +859,11 @@ void getParentMain() {
 
 }
 
+
+
+
+
+
 // important to know all types bytes
 int main() {
     getAllTypeValueMax();
@@ -859,13 +871,6 @@ int main() {
 
 
     /* start*/
-    getParentMain();
+    // getParentMain();
     return 0;
 }
-
-
-// number > 0x0001 = {2, 4, 6, 8, 10, 12}; 
-// *ptr   > 0x0002 = 0x0003
-// temp   > 0x0003 = 2
-
-
