@@ -55,11 +55,60 @@ void IF_AND_ELSE_LESSONS() {
     
 }
 
+void BOOLEAN_OPERATORS() {
+    // exersize 1 
 
+    // int x;
+    // std:cin >> x;
+    // if(x > 10) { // &&, ||, !
+    //     std::cout << x << '\n';
+    // } else {
+    //     std::cout << 0 << '\n';
+    // }
 
+    // exersize 2
+
+    // int x,y,z;
+    // std:cin >> x >> y >> z;
+
+    // if(z == 1) {
+    //     std::cout << x + y << std::endl;
+    // } else if(z == 2) {
+    //     std::cout << x - y << std::endl;
+    // } else if(z == 3) {
+    //     std::cout << x * y << std::endl;
+    // } else if(z == 4) {
+    //     std::cout << x / y << std::endl;
+    // } else if(z == 5) {
+    //     std::cout << x % y << std::endl;
+    // } else{
+    //     std::cout << -1 << std::endl;
+    // }
+
+    // exersize 3
+
+    // int x;
+    // std:cin >> x;
+    // if(((x > 0) && (x <= 10) )) { 
+    //     std::cout << 5 << '\n';
+    // } else {
+    //     std::cout << 0 << '\n';
+    // }
+
+    // exersize 4
+
+    int x;
+    std:cin >> x;
+    if(!((x > 0) && (x <= 10 || (x >= 50 && x != 60)))) { 
+        std::cout << 5 << '\n';
+    } else {
+        std::cout << 10 << '\n';
+    }
+}
 
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
-    IF_AND_ELSE_LESSONS();
+    // IF_AND_ELSE_LESSONS();
+    BOOLEAN_OPERATORS();
 }
