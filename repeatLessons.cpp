@@ -97,8 +97,8 @@ void BOOLEAN_OPERATORS() {
 
     // exersize 4
 
-    int x;
-    std:cin >> x;
+    int x = 15;
+    // std:cin >> x;
     if(!((x > 0) && (x <= 10 || (x >= 50 && x != 60)))) { 
         std::cout << 5 << '\n';
     } else {

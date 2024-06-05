@@ -867,6 +867,6 @@ int main() {
 
 
     /* start*/
-    // getParentMain();
+    getParentMain();
     return 0;
 }
