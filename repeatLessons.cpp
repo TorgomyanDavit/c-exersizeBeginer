@@ -97,13 +97,42 @@ void BOOLEAN_OPERATORS() {
 
     // exersize 4
 
-    int x = 15;
+    // int x = 15;
     // std:cin >> x;
-    if(!((x > 0) && (x <= 10 || (x >= 50 && x != 60)))) { 
-        std::cout << 5 << '\n';
-    } else {
-        std::cout << 10 << '\n';
-    }
+    // if(!((x > 0) && (x <= 10 || (x >= 50 && x != 60)))) { 
+    //     std::cout << 5 << '\n';
+    // } else {
+    //     std::cout << 10 << '\n';
+    // }
+
+    // exersize 5
+    // int x;
+    // std:cin >> x;
+
+    // bool z = x > 23 && (x > 100 && !( x == 120));
+    // bool d = ((x % 2) == 0);
+    // int y = z + d;
+    // std::cout << y << '\n';
+
+    // if(y > 1) { 
+    //     std::cout << 5 << '\n';
+    // } else {
+    //     std::cout << 10 << '\n';
+    // }
+
+    // exersize 6
+    int x;
+    std:cin >> x;
+
+    bool f = true;
+    bool d = false;
+    int a = 24;
+    bool c = -1;
+    int n = f + d + a + c;
+
+    std::cout << n << '\n';
+    std::cout << n << '\n';
+
 }
 
 
