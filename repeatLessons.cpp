@@ -121,19 +121,39 @@ void BOOLEAN_OPERATORS() {
     // }
 
     // exersize 6
-    int x;
-    std:cin >> x;
+    // int x;
+    // std:cin >> x;
 
-    bool f = true;
-    bool d = false;
-    int a = 24;
-    bool c = -1;
-    int n = f + d + a + c;
+    // bool f = true;
+    // bool d = false;
+    // int a = 24;
+    // bool c = -1;
+    // int n = f + d + a + c;
 
-    std::cout << n << '\n';
-    std::cout << n << '\n';
+    // std::cout << n << '\n';
+    // std::cout << n << '\n';
 
 }
+
+void INCREASE_AND_DECREASE() {
+    int points = 10;
+    // int x = ++i;
+    int x = points;
+    points = 50;
+
+    // i = i + 2; =>  // i += 2; =>  // i += 1;
+    // i %= 2;
+    // i++; 
+    // i--;
+    // --i;
+
+
+
+    std::cout << x << "\n";
+    std::cout << points << "\n";
+
+}
+
 
 
 
@@ -141,5 +161,7 @@ void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
     // IF_AND_ELSE_LESSONS();
-    BOOLEAN_OPERATORS();
+    // BOOLEAN_OPERATORS();
+    INCREASE_AND_DECREASE();
+
 }
