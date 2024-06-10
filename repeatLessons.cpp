@@ -21,7 +21,6 @@ void STD_CIN_LESSONS() {
     cout << "=== std::cin >> count === " << count << "\n";
 }
 
-
 void IF_AND_ELSE_LESSONS() {
     int count,age;
     // std::cin >> count >> age;
@@ -154,6 +153,19 @@ void INCREASE_AND_DECREASE() {
 
 }
 
+void LoopsForWhile() {
+    // int x = 0;
+    // while (x < 10) {
+    //     std::cout << x << std::endl;
+    //     x++;
+    // }
+
+    for(int i = 0; i < 10; i++) {
+        std::cout << i << std::endl;
+    }
+    
+
+}
 
 
 
@@ -162,6 +174,8 @@ void RepeatLessons() {
     // STD_CIN_LESSONS();
     // IF_AND_ELSE_LESSONS();
     // BOOLEAN_OPERATORS();
-    INCREASE_AND_DECREASE();
+    // INCREASE_AND_DECREASE();
+    LoopsForWhile();
+
 
 }
