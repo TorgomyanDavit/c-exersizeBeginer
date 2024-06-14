@@ -21,7 +21,6 @@ void STD_CIN_LESSONS() {
     cout << "=== std::cin >> count === " << count << "\n";
 }
 
-
 void IF_AND_ELSE_LESSONS() {
     int count,age;
     // std::cin >> count >> age;
@@ -55,13 +54,117 @@ void IF_AND_ELSE_LESSONS() {
     
 }
 
-void FOR_LOOP() {
+void BOOLEAN_OPERATORS() {
+    // exersize 1 
+
     // int x;
-    // int sum = 0;
-    // do {
-    //     std::cin >> x;
-    //     sum += x;
-    // } while (x != 0);
+    // std:cin >> x;
+    // if(x > 10) { // &&, ||, !
+    //     std::cout << x << '\n';
+    // } else {
+    //     std::cout << 0 << '\n';
+    // }
+
+    // exersize 2
+
+    // int x,y,z;
+    // std:cin >> x >> y >> z;
+
+    // if(z == 1) {
+    //     std::cout << x + y << std::endl;
+    // } else if(z == 2) {
+    //     std::cout << x - y << std::endl;
+    // } else if(z == 3) {
+    //     std::cout << x * y << std::endl;
+    // } else if(z == 4) {
+    //     std::cout << x / y << std::endl;
+    // } else if(z == 5) {
+    //     std::cout << x % y << std::endl;
+    // } else{
+    //     std::cout << -1 << std::endl;
+    // }
+
+    // exersize 3
+
+    // int x;
+    // std:cin >> x;
+    // if(((x > 0) && (x <= 10) )) { 
+    //     std::cout << 5 << '\n';
+    // } else {
+    //     std::cout << 0 << '\n';
+    // }
+
+    // exersize 4
+
+    // int x = 15;
+    // std:cin >> x;
+    // if(!((x > 0) && (x <= 10 || (x >= 50 && x != 60)))) { 
+    //     std::cout << 5 << '\n';
+    // } else {
+    //     std::cout << 10 << '\n';
+    // }
+
+    // exersize 5
+    // int x;
+    // std:cin >> x;
+
+    // bool z = x > 23 && (x > 100 && !( x == 120));
+    // bool d = ((x % 2) == 0);
+    // int y = z + d;
+    // std::cout << y << '\n';
+
+    // if(y > 1) { 
+    //     std::cout << 5 << '\n';
+    // } else {
+    //     std::cout << 10 << '\n';
+    // }
+
+    // exersize 6
+    // int x;
+    // std:cin >> x;
+
+    // bool f = true;
+    // bool d = false;
+    // int a = 24;
+    // bool c = -1;
+    // int n = f + d + a + c;
+
+    // std::cout << n << '\n';
+    // std::cout << n << '\n';
+
+}
+
+void INCREASE_AND_DECREASE() {
+    int points = 10;
+    // int x = ++i;
+    int x = points;
+    points = 50;
+
+    // i = i + 2; =>  // i += 2; =>  // i += 1;
+    // i %= 2;
+    // i++; 
+    // i--;
+    // --i;
+
+
+
+    std::cout << x << "\n";
+    std::cout << points << "\n";
+
+}
+
+void LoopsForWhile() {
+    // int x = 0;
+    // while (x < 10) {
+    //     std::cout << x << std::endl;
+    //     x++;
+    // }
+
+    for(int i = 0; i < 10; i++) {
+        std::cout << i << std::endl;
+    }
+    
+
 
     // std::cout << sum << std::endl;
 
@@ -74,9 +177,6 @@ void FOR_LOOP() {
     // }
 
 
-    for (int i = 0; i < 10; i++) {
-        std::cout << i << std::endl;
-    }
 }
 
 void LOOP_EXERCIZE() {
@@ -94,19 +194,31 @@ void LOOP_EXERCIZE() {
     // }
 
     /** exersize 3*/
-    int count;
-    std::cin >> count;
+    // int count;
+    // std::cin >> count;
 
     // for (int i = count; i > 0; i--){
     //     std::cout << i << std::endl;
     // }
 
-    while (count > 0){
-        std::cout << count << std::endl;
-        count--;
+    // while (count > 0){
+    //     std::cout << count << std::endl;
+    //     count--;
+    // }
+
+    /** exersize 4*/
+    int count;
+    std::cin >> count;
+
+    // for (int i = 1; i <= count; i++){
+    //     std::cout << i << std::endl;
+    // }
+
+    int x = 1;
+    while (x <= count){
+        std::cout << x << std::endl;
+        x++;
     }
-    
-    
 
     
 }
@@ -118,5 +230,7 @@ void RepeatLessons() {
     // IF_AND_ELSE_LESSONS();
     // FOR_LOOP();
     LOOP_EXERCIZE();
-
+    // BOOLEAN_OPERATORS();
+    // INCREASE_AND_DECREASE();
+    // LoopsForWhile();
 }
