@@ -2,11 +2,7 @@
 #include "./arrayExersize.cpp"
 #include "./sortingAlgoritm.cpp"
 #include "./char.cpp"
-<<<<<<< HEAD
-#include "./file.cpp"
-=======
 #include "./repeatLessons.cpp"
->>>>>>> 7c4f59e2ab842c81d2945679c90d10152a37bf4d
 
 
 
@@ -854,9 +850,6 @@ void getParentMain() {
     // Կրկնում եմ անցացը
 
     RepeatLessons();
-
-
-
 }
 
 
@@ -867,10 +860,10 @@ void getParentMain() {
 // important to know all types bytes
 int main() {
     getAllTypeValueMax();
-
+    
 
 
     /* start*/
-    // getParentMain();
+    getParentMain();
     return 0;
 }
