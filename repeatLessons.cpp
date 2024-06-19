@@ -15,14 +15,14 @@ std::string getType(const T&) {
 }
 
 void STD_CIN_LESSONS() {
-    int count;
-    std::cin >> count;
+    // int count;
+    // std::cin >> count;
 
-    cout << "=== std::cin >> count === " << count << "\n";
+    // cout << "=== std::cin >> count === " << count << "\n";
 }
 
 void IF_AND_ELSE_LESSONS() {
-    int count,age;
+    // int count,age;
     // std::cin >> count >> age;
 
     // if(count == 10) {
@@ -44,12 +44,12 @@ void IF_AND_ELSE_LESSONS() {
     //     std::cout << "age is less or equal => " << "10" << "\n";
     // }
 
-    std::cin >> count;
-    bool r = count > 10;
+    // std::cin >> count;
+    // bool r = count > 10;
 
-    // std::cout << "what is => (count > 10) r "<< typeid(r).name()  <<  "\n";
-    std::cout << "what is "<< true <<  "\n";
-    std::cout << "type is "<< getType(r) << "\n";
+    // // std::cout << "what is => (count > 10) r "<< typeid(r).name()  <<  "\n";
+    // std::cout << "what is "<< true <<  "\n";
+    // std::cout << "type is "<< getType(r) << "\n";
 
     
 }
@@ -135,10 +135,10 @@ void BOOLEAN_OPERATORS() {
 }
 
 void INCREASE_AND_DECREASE() {
-    int points = 10;
+    // int points = 10;
     // int x = ++i;
-    int x = points;
-    points = 50;
+    // int x = points;
+    // points = 50;
 
     // i = i + 2; =>  // i += 2; =>  // i += 1;
     // i %= 2;
@@ -148,8 +148,8 @@ void INCREASE_AND_DECREASE() {
 
 
 
-    std::cout << x << "\n";
-    std::cout << points << "\n";
+    // std::cout << x << "\n";
+    // std::cout << points << "\n";
 
 }
 
@@ -160,9 +160,9 @@ void LoopsForWhile() {
     //     x++;
     // }
 
-    for(int i = 0; i < 10; i++) {
-        std::cout << i << std::endl;
-    }
+    // for(int i = 0; i < 10; i++) {
+    //     std::cout << i << std::endl;
+    // }
     
 
 
@@ -180,7 +180,6 @@ void LoopsForWhile() {
 }
 
 void LOOP_EXERCIZE() {
-
     /** exersize 1*/
     // for (int i = 1; i <= 10; i++) {
     //     std::cout << i << std::endl;
@@ -207,20 +206,119 @@ void LOOP_EXERCIZE() {
     // }
 
     /** exersize 4*/
-    int count;
-    std::cin >> count;
+    // int count;
+    // std::cin >> count;
 
-    // for (int i = 1; i <= count; i++){
-    //     std::cout << i << std::endl;
+    // // for (int i = 1; i <= count; i++){
+    // //     std::cout << i << std::endl;
+    // // }
+
+    // int x = 1;
+    // while (x <= count){
+    //     std::cout << x << std::endl;
+    //     x++;
     // }
 
-    int x = 1;
-    while (x <= count){
-        std::cout << x << std::endl;
-        x++;
+
+    /** exersize 5*/
+    // int count;
+    // std::cin >> count;
+    // int sum = 0;
+    // for (int i = 1; i <= count; i++){
+    //     sum += i;
+    // }
+    // std::cout << sum << std::endl;
+
+    // int sum = 0;
+    // while (count > 0){
+    //     sum += count;
+    //     count--;
+    // }
+    // std::cout << sum << std::endl;
+
+    /** exersize 6*/
+    // int count;
+    // std::cin >> count;
+
+    // for(int i = 0; i <= count;i++) {
+    //     for(int x = 0;x < i; x++) {
+    //         std::cout << 1;
+    //     }
+    //     std::cout << std::endl; 
+    // }
+
+    /** exersize 7*/
+
+    // int count;
+    // std::cin >> count;
+
+    // int sum = 0;
+    // for(int i = 0; i <= count;i++) {
+    //     if(i % 2 != 0) {
+    //         sum += i;
+    //     }
+    // }
+
+    // std::cout << sum << std::endl; 
+
+    /** exersize 8*/
+
+    // int number, count;
+    // std::cin >> number >> count;
+
+    // int powResult = number;
+    // for(int i = 0; i < count - 1; i++) { 
+    //     powResult *= number;
+    // }
+
+    // std::cout << powResult << std::endl; 
+
+
+    /** exersize 9 Half Diamonds*/ 
+    // int count = 9;
+    // int ones = 1;
+    
+    // for (int i = 1; i <= count; i++) { 
+    //     for (int x = 1; x <= ones; x++) { 
+    //         std::cout << 1;
+    //     }
+
+    //     std::cout << std::endl; 
+    //     if(i > count / 2) {
+    //         ones -= 2;
+    //     } else {
+    //         ones += 2;
+    //     }
+    // }
+
+
+
+
+
+
+}
+
+void printDiamond(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int emptyCount = 1; emptyCount <= n - i; emptyCount++) {
+            std::cout << "_";
+        }
+        for (int dimondsCount = 1; dimondsCount <= 2 * i - 1; dimondsCount++) {
+            std::cout << 1;
+        }
+        std::cout << std::endl;
+    }
+    
+    for (int i = n - 1; i >= 1; i--) {
+        for (int emptyCount = 1; emptyCount <= n - i; emptyCount++) {
+            std::cout << "_";
+        }
+        for (int dimondsCount = 1; dimondsCount <= 2 * i - 1; dimondsCount++) {
+            std::cout << 1;
+        }
+        std::cout << std::endl;
     }
 
-    
 }
 
 
@@ -229,8 +327,11 @@ void RepeatLessons() {
     // STD_CIN_LESSONS();
     // IF_AND_ELSE_LESSONS();
     // FOR_LOOP();
-    LOOP_EXERCIZE();
     // BOOLEAN_OPERATORS();
     // INCREASE_AND_DECREASE();
     // LoopsForWhile();
+    LOOP_EXERCIZE();
+    printDiamond(5);
+
+
 }
