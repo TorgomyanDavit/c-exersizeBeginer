@@ -275,21 +275,9 @@ void LOOP_EXERCIZE() {
 
 
     /** exersize 9 Half Diamonds*/ 
-    // int count = 9;
-    // int ones = 1;
-    
-    // for (int i = 1; i <= count; i++) { 
-    //     for (int x = 1; x <= ones; x++) { 
-    //         std::cout << 1;
-    //     }
 
-    //     std::cout << std::endl; 
-    //     if(i > count / 2) {
-    //         ones -= 2;
-    //     } else {
-    //         ones += 2;
-    //     }
-    // }
+    
+
 
 
 
@@ -298,9 +286,10 @@ void LOOP_EXERCIZE() {
 
 }
 
-void printDiamond(int n) {
-    for (int i = 1; i <= n; i++) {
-        for (int emptyCount = 1; emptyCount <= n - i; emptyCount++) {
+// Print Diamonds 1 to line 1
+void printDiamondTo_1_to_1(int count) {
+    for (int i = 1; i <= count; i++) {
+        for (int emptyCount = 1; emptyCount <= count - i; emptyCount++) {
             std::cout << "_";
         }
         for (int dimondsCount = 1; dimondsCount <= 2 * i - 1; dimondsCount++) {
@@ -309,8 +298,8 @@ void printDiamond(int n) {
         std::cout << std::endl;
     }
     
-    for (int i = n - 1; i >= 1; i--) {
-        for (int emptyCount = 1; emptyCount <= n - i; emptyCount++) {
+    for (int i = count - 1; i >= 1; i--) {
+        for (int emptyCount = 1; emptyCount <= count - i; emptyCount++) {
             std::cout << "_";
         }
         for (int dimondsCount = 1; dimondsCount <= 2 * i - 1; dimondsCount++) {
@@ -321,6 +310,52 @@ void printDiamond(int n) {
 
 }
 
+// Print Diamonds 1 to line 2
+void printDiamondTo_1_to_2(int count) {
+    int ones = 1;
+    int underLineCount = count;
+
+
+    for (int i = 1; i <= count; i++) { 
+        for (int y = underLineCount; y > 1; y--) { 
+            std::cout << "_";
+        }
+
+        for (int x = 1; x <= 2 * ones - 1; x++) { 
+            std::cout << 1;
+        }
+
+        std::cout << std::endl; 
+        if(i > count / 2) {
+            ones -= 2;
+        } else {
+            ones += 2;
+        }
+
+        if(i > underLineCount) {
+            underLineCount += 2;
+        } else {
+            underLineCount -= 2;
+        }
+
+    }
+}
+
+// Print Half Diamonds
+void printHalfDiamond(int count) {
+    for (int i = 1; i <= count; i++) { 
+        for (int x = 1; x <= ones; x++) { 
+            std::cout << 1;
+        }
+
+        std::cout << std::endl; 
+        if(i > count / 2) {
+            ones -= 2;
+        } else {
+            ones += 2;
+        }
+    }
+}
 
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
@@ -331,7 +366,9 @@ void RepeatLessons() {
     // INCREASE_AND_DECREASE();
     // LoopsForWhile();
     LOOP_EXERCIZE();
-    printDiamond(5);
+    // printHalfDiamond(5);
+    // printDiamondTo_1_to_1(5)
+    // printDiamondTo_1_to_2(5)
 
 
 }
