@@ -365,19 +365,19 @@ void printHalfDiamond(int count) {
 }
 
 void printIsPrimeNumber(int count) {
-    int isPrime = 0;
+
     for(int i = 2;i < count;i++) {
-        for(int x = 2;x <= i;x++) {
+        bool isPrime = true;
+        for(int x = 2; x < i;x++) {
             if(i % x == 0) {
-                isPrime++;
+                isPrime = false;
+                break;
             }
         }
 
-        if(isPrime == 1) {
+        if(isPrime) {
             std::cout << i << std::endl;
         }
-
-        isPrime = 0;
     }
 }
 
@@ -392,8 +392,8 @@ void RepeatLessons() {
     // printHalfDiamond(5);
     // printDiamondTo_1_to_1(5);
     // printDiamondTo_1_to_2(5);
-    // printIsPrimeNumber(100);
-    LOOP_EXERCIZE();
+    printIsPrimeNumber(100);
+    // LOOP_EXERCIZE();
 
 
 
