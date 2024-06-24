@@ -276,6 +276,12 @@ void LOOP_EXERCIZE() {
 
     /** exersize 9 Half Diamonds*/ 
 
+    /** exersize 10 Half Diamonds*/ 
+
+
+
+
+
     
 
 
@@ -343,6 +349,7 @@ void printDiamondTo_1_to_2(int count) {
 
 // Print Half Diamonds
 void printHalfDiamond(int count) {
+    int ones = 1;
     for (int i = 1; i <= count; i++) { 
         for (int x = 1; x <= ones; x++) { 
             std::cout << 1;
@@ -357,6 +364,23 @@ void printHalfDiamond(int count) {
     }
 }
 
+void printIsPrimeNumber(int count) {
+    int isPrime = 0;
+    for(int i = 2;i < count;i++) {
+        for(int x = 2;x <= i;x++) {
+            if(i % x == 0) {
+                isPrime++;
+            }
+        }
+
+        if(isPrime == 1) {
+            std::cout << i << std::endl;
+        }
+
+        isPrime = 0;
+    }
+}
+
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
@@ -365,10 +389,12 @@ void RepeatLessons() {
     // BOOLEAN_OPERATORS();
     // INCREASE_AND_DECREASE();
     // LoopsForWhile();
-    LOOP_EXERCIZE();
     // printHalfDiamond(5);
-    // printDiamondTo_1_to_1(5)
-    // printDiamondTo_1_to_2(5)
+    // printDiamondTo_1_to_1(5);
+    // printDiamondTo_1_to_2(5);
+    // printIsPrimeNumber(100);
+    LOOP_EXERCIZE();
+
 
 
 }
