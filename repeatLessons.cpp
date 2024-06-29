@@ -273,20 +273,9 @@ void LOOP_EXERCIZE() {
 
     // std::cout << powResult << std::endl; 
 
-
     /** exersize 9 Half Diamonds*/ 
-
     /** exersize 10 Half Diamonds*/ 
-
-
-
-
-
-    
-
-
-
-
+    /** exersize 11 print IsPrime*/ 
 
 
 
@@ -381,6 +370,38 @@ void printIsPrimeNumber(int count) {
     }
 }
 
+void SWITCH_CASE() {
+    int x;
+    std:cin >> x;
+
+    // if(x == 1) {
+    //     std::cout << 111 << std::endl;
+    // } else if(x == 2) {
+    //     std::cout << 222 << std::endl;
+    // } else if(x == 3) {
+    //     std::cout << 333 << std::endl;
+    // }  else {
+    //     std::cout << "else" << std::endl;
+    // } 
+
+    switch(x) {
+        case 1:
+            std::cout << 111 << std::endl;
+            break;
+        case 2:
+            std::cout << 222 << std::endl;
+            // break;
+        case 3:
+            std::cout << 333 << std::endl;
+            break;
+        default:
+            std::cout << "else" << std::endl;
+            break;
+    }
+
+}
+
+
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
@@ -392,9 +413,9 @@ void RepeatLessons() {
     // printHalfDiamond(5);
     // printDiamondTo_1_to_1(5);
     // printDiamondTo_1_to_2(5);
-    printIsPrimeNumber(100);
+    // printIsPrimeNumber(100);
     // LOOP_EXERCIZE();
-
+    SWITCH_CASE();
 
 
 }
