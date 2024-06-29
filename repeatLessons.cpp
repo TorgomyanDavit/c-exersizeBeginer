@@ -402,6 +402,25 @@ void SWITCH_CASE() {
 }
 
 
+
+int FUNCTION() {
+    auto printResult = [](int count) {
+        int result = 0;
+        for(int i = 1; i <= count; i++) {
+            result += i;
+        }
+        std::cout << result << std::endl;
+    };
+
+    auto sum = [&](int count) { // using [&] with lambd function to allow use anoher printResult() reference from another func
+        printResult(count);
+        return 1;
+    };
+
+
+    return sum(10);
+}
+
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
@@ -415,7 +434,7 @@ void RepeatLessons() {
     // printDiamondTo_1_to_2(5);
     // printIsPrimeNumber(100);
     // LOOP_EXERCIZE();
-    SWITCH_CASE();
-
-
+    // SWITCH_CASE();
+    FUNCTION();
+    
 }
