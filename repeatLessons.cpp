@@ -402,7 +402,6 @@ void SWITCH_CASE() {
 }
 
 
-
 int FUNCTION() {
     auto printResult = [](int count) {
         int result = 0;
@@ -412,13 +411,35 @@ int FUNCTION() {
         std::cout << result << std::endl;
     };
 
-    auto sum = [&](int count) { // using [&] with lambd function to allow use anoher printResult() reference from another func
+    auto sum = [&](int count) { // using [&] with lambda function to allow use anoher printResult() reference from another func
         printResult(count);
         return 1;
     };
 
 
     return sum(10);
+}
+
+int PrimitiveDataType() {
+    int a = 2147483648; /** -2147483647;  4 byte */ 
+    unsigned int b = 4294967295;
+    short int c = 32767;  /** -32767 2 byte*/ 
+    unsigned short int d = 65535;  /** -32767 2 byte */ 
+    long int e = 2147483647;  /** -2147483648 4 byte */ 
+    long long int f = 9223372036854775807;  /** -9223372036854775808 to 9223372036854775807 */ 
+    unsigned long long int g = 9223372036854775807;  /** -9223372036854775808 to 9223372036854775807 */ 
+
+
+
+
+
+
+    std::cout << f << std::endl;
+    std::cout << "bite => " << sizeof(g) << std::endl;
+
+
+
+    return 0;   
 }
 
 void RepeatLessons() {
@@ -435,6 +456,6 @@ void RepeatLessons() {
     // printIsPrimeNumber(100);
     // LOOP_EXERCIZE();
     // SWITCH_CASE();
-    FUNCTION();
-    
+    // FUNCTION();
+    PrimitiveDataType();
 }
