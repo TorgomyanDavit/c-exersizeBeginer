@@ -273,14 +273,9 @@ void LOOP_EXERCIZE() {
 
     // std::cout << powResult << std::endl; 
 
-
     /** exersize 9 Half Diamonds*/ 
-
-    
-
-
-
-
+    /** exersize 10 Half Diamonds*/ 
+    /** exersize 11 print IsPrime*/ 
 
 
 
@@ -358,6 +353,95 @@ void printHalfDiamond(int count) {
     }
 }
 
+void printIsPrimeNumber(int count) {
+
+    for(int i = 2;i < count;i++) {
+        bool isPrime = true;
+        for(int x = 2; x < i;x++) {
+            if(i % x == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if(isPrime) {
+            std::cout << i << std::endl;
+        }
+    }
+}
+
+void SWITCH_CASE() {
+    int x;
+    std:cin >> x;
+
+    // if(x == 1) {
+    //     std::cout << 111 << std::endl;
+    // } else if(x == 2) {
+    //     std::cout << 222 << std::endl;
+    // } else if(x == 3) {
+    //     std::cout << 333 << std::endl;
+    // }  else {
+    //     std::cout << "else" << std::endl;
+    // } 
+
+    switch(x) {
+        case 1:
+            std::cout << 111 << std::endl;
+            break;
+        case 2:
+            std::cout << 222 << std::endl;
+            // break;
+        case 3:
+            std::cout << 333 << std::endl;
+            break;
+        default:
+            std::cout << "else" << std::endl;
+            break;
+    }
+
+}
+
+
+int FUNCTION() {
+    auto printResult = [](int count) {
+        int result = 0;
+        for(int i = 1; i <= count; i++) {
+            result += i;
+        }
+        std::cout << result << std::endl;
+    };
+
+    auto sum = [&](int count) { // using [&] with lambda function to allow use anoher printResult() reference from another func
+        printResult(count);
+        return 1;
+    };
+
+
+    return sum(10);
+}
+
+int PrimitiveDataType() {
+    int a = 2147483648; /** -2147483647;  4 byte */ 
+    unsigned int b = 4294967295;
+    short int c = 32767;  /** -32767 2 byte*/ 
+    unsigned short int d = 65535;  /** -32767 2 byte */ 
+    long int e = 2147483647;  /** -2147483648 4 byte */ 
+    long long int f = 9223372036854775807;  /** -9223372036854775808 to 9223372036854775807 */ 
+    unsigned long long int g = 9223372036854775807;  /** -9223372036854775808 to 9223372036854775807 */ 
+
+
+
+
+
+
+    std::cout << f << std::endl;
+    std::cout << "bite => " << sizeof(g) << std::endl;
+
+
+
+    return 0;   
+}
+
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
@@ -366,10 +450,12 @@ void RepeatLessons() {
     // BOOLEAN_OPERATORS();
     // INCREASE_AND_DECREASE();
     // LoopsForWhile();
-    LOOP_EXERCIZE();
     // printHalfDiamond(5);
-    // printDiamondTo_1_to_1(5)
-    // printDiamondTo_1_to_2(5)
-
-
+    // printDiamondTo_1_to_1(5);
+    // printDiamondTo_1_to_2(5);
+    // printIsPrimeNumber(100);
+    // LOOP_EXERCIZE();
+    // SWITCH_CASE();
+    // FUNCTION();
+    PrimitiveDataType();
 }
