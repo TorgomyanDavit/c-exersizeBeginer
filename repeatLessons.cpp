@@ -343,6 +343,7 @@ void printDiamondTo_1_to_2(int count) {
 
 // Print Half Diamonds
 void printHalfDiamond(int count) {
+    int ones = 1;
     for (int i = 1; i <= count; i++) { 
         for (int x = 1; x <= ones; x++) { 
             std::cout << 1;
