@@ -1,6 +1,8 @@
 #include <iostream>
 #include <type_traits>
 #include <string>
+#include <cstdint>
+
 using namespace std;
 
 template <typename T>
@@ -428,16 +430,17 @@ int PrimitiveDataType() {
     long int e = 2147483647;  /** -2147483648 4 byte */ 
     long long int f = 9223372036854775807;  /** -9223372036854775808 to 9223372036854775807 */ 
     unsigned long long int g = 9223372036854775807;  /** -9223372036854775808 to 9223372036854775807 */ 
+    unsigned char i2 = 55;
+    char i = 'a'; /** 97 */ 
+    char z = i + 10;
+    double db = 12.5;
+    float fl = 12.5f;
+    bool bl = true;
 
 
 
-
-
-
-    std::cout << f << std::endl;
-    std::cout << "bite => " << sizeof(g) << std::endl;
-
-
+    std::cout << "byte => " << sizeof(db) << std::endl;
+    std::cout << "byte => " << sizeof(fl) << std::endl;
 
     return 0;   
 }
