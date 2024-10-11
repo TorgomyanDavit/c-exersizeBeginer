@@ -445,6 +445,73 @@ int PrimitiveDataType() {
     return 0;   
 }
 
+
+void swap(int *a,int *b) {
+    int *z = a;
+    a = b;
+    b = z;
+
+    std::cout << "dsdsdad => "  << std::endl;
+}
+
+int Pointer() {
+    int i = 25;
+    int *iPtr = &i;
+    *iPtr = 10;
+    int **iPtr2 = &iPtr; 
+
+    int x = 55; // 0x001
+    int y = 60; // 0x002
+
+    swap(x,y);
+
+    int v = 55;
+    int *vPtr = &v;
+    *vPtr = 66;
+
+    std::cout << "PTR => " << *vPtr << std::endl;
+    std::cout << "byte => " << y << std::endl;
+
+    return 0;   
+}
+
+int PointerExersize() {
+
+    /* 1 */
+    // int a = 20;
+    // int *b = &a;
+    // std::cout << "PTR => " << b << std::endl;
+
+    /* 2 */
+    // double a = 20.5;
+    // double *b = &a;
+    // std::cout << "exersize => " << *b + 10 << std::endl;
+
+    /* 3*/
+    // double a = 10;
+    // std::cout << "exersize => " << *(&(*(&a))) << std::endl;
+
+    /** 4 */
+    // int a = 5; 
+    // int b = 10;
+    // int *c = &a;
+    // int d = *c + b + (*(&a));
+    // *c = d * 2;
+
+    /** 5 */
+    // double a = 4.2;
+    // double b = 2;
+    // double *c = &b;
+    // *c = (2) * (4.2) * 2;
+
+    // std::cout << "exersize => " << a << std::endl;  /* 4.2*/
+    // std::cout << "exersize => " << b << std::endl; /*16.8*/
+
+
+
+    return 0;   
+}
+
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
@@ -460,5 +527,8 @@ void RepeatLessons() {
     // LOOP_EXERCIZE();
     // SWITCH_CASE();
     // FUNCTION();
-    PrimitiveDataType();
+    // PrimitiveDataType();
+    // Pointer();
+    PointerExersize();
+
 }
