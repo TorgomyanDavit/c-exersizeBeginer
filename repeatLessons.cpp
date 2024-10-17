@@ -507,7 +507,39 @@ int PointerExersize() {
     // std::cout << "exersize => " << a << std::endl;  /* 4.2*/
     // std::cout << "exersize => " << b << std::endl; /*16.8*/
 
+    /** 6 */
+    // double d = 4.3;
+    // double q = 1.5;
+    // double * ptr = &d;
+    // (*ptr)++; /**5.3*/
+    // *ptr = q;
 
+    // std::cout << "exersize => " << *ptr << std::endl;  /** 1.5*/
+    // std::cout << "exersize => " << d << std::endl; /*1.5*/
+    // std::cout << "exersize => " << q << std::endl; /*1.5*/
+
+    /** 7 */
+    // int a =7;
+    // int b = 13;
+    // int *c = &b;
+    // *c = 2;
+
+    // std::cout << "exersize => " << a << std::endl;    
+    // std::cout << "exersize => " << b << std::endl;    
+
+    /** 8 */
+    // int a = 500;
+    // int b = 10;
+    // int *d = &a;
+    // int *z = &b;
+    // d = z;
+    // *d += 20;
+
+    // std::cout << "exersize => " << a << std::endl;  /*500*/  
+    // std::cout << "exersize => " << b << std::endl;  /** 30*/
+
+    /** 9 */
+    
 
     return 0;   
 }
