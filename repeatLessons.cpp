@@ -502,7 +502,7 @@ int PointerExersize() {
     int *b = &c; 
     int **a = &b;
 
-    std::cout << F(c,b,a) << std::endl;
+    // std::cout << F(c,b,a) << std::endl;
 
     /* 1 */
     // int a = 20;
