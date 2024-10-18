@@ -475,7 +475,40 @@ int Pointer() {
     return 0;   
 }
 
+
+/**
+ * c    =>     0x61fed8    =>  8
+ * b    =>     0x61fed4    =>  0x61fed8
+ * a    =>     0x654635    =>  0x61fed4
+ * x    =>     0xfsdffs    =>  8
+ * py   =>     0xdasd56    =>  0x61fed8
+ * ppz  =>     0x4dasd4    =>  0x61fed4   
+ * y    =>     0x65464q    =>  8
+ * z    =>     0xdad46d    =>  6
+*/
+int F(int x, int *py,int **ppz) {
+    int y;
+    **ppz += 1;
+    int z = **ppz;
+    *py += 2;
+    y = *py;
+    x += 3;
+    return x + y + z;
+}
+
 int PointerExersize() {
+    /** 9 */
+    int c = 5; 
+    int *b = &c; 
+    int **a = &b;
+
+    std::cout << c << std::endl;
+    std::cout << b << std::endl;
+    std::cout << a << std::endl;
+
+
+    
+    // std::cout << F(c,b,a) << std::endl;
 
     /* 1 */
     // int a = 20;
@@ -537,9 +570,6 @@ int PointerExersize() {
 
     // std::cout << "exersize => " << a << std::endl;  /*500*/  
     // std::cout << "exersize => " << b << std::endl;  /** 30*/
-
-    /** 9 */
-    
 
     return 0;   
 }
