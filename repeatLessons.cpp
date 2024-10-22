@@ -2,7 +2,7 @@
 #include <type_traits>
 #include <string>
 #include <cstdint>
-
+#include <vector>
 using namespace std;
 
 template <typename T>
@@ -568,6 +568,21 @@ int PointerExersize() {
     return 0;   
 }
 
+void Array() {
+    // std::vector<int> arr = {1, 2, 3, 4, 5};
+    // int length = arr.size(); 
+
+    int x[5] = {15,25,35,45,55};
+    // int length  = sizeof(x) / sizeof(int);
+    // y = {1,2,3,4,5};
+
+    // std::cout << y[2] << std::endl;
+    // std::cout << sizeof(y) / sizeof(int) << std::endl;
+    std::cout << x << std::endl;
+
+}
+
+
 void RepeatLessons() {
     cout << "=== Start Lessons 2 ===" << endl;
     // STD_CIN_LESSONS();
@@ -585,6 +600,7 @@ void RepeatLessons() {
     // FUNCTION();
     // PrimitiveDataType();
     // Pointer();
-    PointerExersize();
+    // PointerExersize();
+    Array();
 
 }
