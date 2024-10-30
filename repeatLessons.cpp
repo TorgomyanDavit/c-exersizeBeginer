@@ -3,6 +3,7 @@
 #include <string>
 #include <cstdint>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 template <typename T>
@@ -568,17 +569,56 @@ int PointerExersize() {
     return 0;   
 }
 
-void Array() {
+
+int Average(int z[],int length) {
+    std::cout << z << std::endl;
+
     // std::vector<int> arr = {1, 2, 3, 4, 5};
     // int length = arr.size(); 
 
-    int x[5] = {15,25,35,45,55};
+    // for(int i =0; i < length;i++) {
+
+    // }
+    return 0;
+}
+
+void Array() {
+
+    int x[5] = {15, 25, 35, 45, 55};
+    int length  = sizeof(x) / sizeof(int);
+
+    int *xPtr = x;
+
+    std::cout << Average(x,length) << std::endl;
+
+    // std::vector<int> arr = {1, 2, 3, 4, 5};
+    // int length = arr.size(); 
+    // int x[5] = {15, 25, 35, 45, 55};
+    // std::for_each(
+    //     std::begin(x),
+    //     std::end(x),
+    //     [](int value) {
+    //         std::cout << value << std::endl;
+    //     }
+    // );
     // int length  = sizeof(x) / sizeof(int);
     // y = {1,2,3,4,5};
 
     // std::cout << y[2] << std::endl;
     // std::cout << sizeof(y) / sizeof(int) << std::endl;
-    std::cout << x << std::endl;
+    // std::cout << x << std::endl;
+
+    // int x[5] = {15, 25, 35, 45, 55};
+    // for(int i = 0; i < 5;i++) {
+    //     std::cout << &x[i] << std::endl;
+    // }
+
+    // int *xPtr = x;
+    // xPtr++;
+    // std::cout << *xPtr << std::endl;
+    // std::cout << xPtr[2] << std::endl;
+
+
 
 }
 
