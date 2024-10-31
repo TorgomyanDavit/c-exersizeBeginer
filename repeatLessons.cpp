@@ -5,6 +5,8 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
+
 
 template <typename T>
 std::string getType(const T&) {
@@ -570,29 +572,39 @@ int PointerExersize() {
 }
 
 
-int Average(int z[],int length) {
+double Average(int z[], int length) {
     std::cout << z << std::endl;
+    int result = 0;
 
-    // std::vector<int> arr = {1, 2, 3, 4, 5};
-    // int length = arr.size(); 
+    // z = {15, 25, 35, 45, 55}
+    for (int i = 0; i < length; i++) {
+        result += *(z + i); //  z[i]
+    };
 
-    // for(int i =0; i < length;i++) {
+    std::cout << "Sum of elements: " << result << std::endl;
+    
+    // Convert result to double for precise division
+    double average = static_cast<double>(result) / length;
+    std::cout << "Average: " << average << std::endl;
 
-    // }
-    return 0;
+    return average;
 }
 
 void Array() {
 
-    int x[5] = {15, 25, 35, 45, 55};
+    int x[] = {55, 25, 93, 100, 12};
     int length  = sizeof(x) / sizeof(int);
 
     int *xPtr = x;
+    // Average(x,length);
+    // std::cout << Average(x,length) << std::endl;
+    // std::cout << x[4] << std::endl;
 
-    std::cout << Average(x,length) << std::endl;
 
     // std::vector<int> arr = {1, 2, 3, 4, 5};
     // int length = arr.size(); 
+    // std::cout << "Array size: " << ARRAY_SIZE(x) << std::endl;  // Output: 5
+
     // int x[5] = {15, 25, 35, 45, 55};
     // std::for_each(
     //     std::begin(x),
@@ -617,14 +629,35 @@ void Array() {
     // xPtr++;
     // std::cout << *xPtr << std::endl;
     // std::cout << xPtr[2] << std::endl;
+}
 
+void PrintArray(int arr[], int length) { 
+    for (int i = 0; i < length; i++) {
+        cout << arr[i] << endl;
+    }
+}
 
+void MaxArray(int arr[], int length) { 
+    int maximum = arr[0];
+    for (int i = 0; i < length; i++) {
+        if(arr[i] > maximum ) { // *(arr + (i + 1))
+            maximum = arr[i];
+        }
+    }
+
+    std::cout << maximum << std::endl;
+}
+
+void ArrayExersize() {
+    int array[] = {1, 2, 8, 3, 4, 5};
+    int length = sizeof(array) / sizeof(int);
+    // PrintArray(array, length);
+    MaxArray(array, length);
 
 }
 
-
 void RepeatLessons() {
-    cout << "=== Start Lessons 2 ===" << endl;
+    std::cout << "=== Start Lessons 2 ===" << std::endl;
     // STD_CIN_LESSONS();
     // IF_AND_ELSE_LESSONS();
     // FOR_LOOP();
@@ -641,6 +674,6 @@ void RepeatLessons() {
     // PrimitiveDataType();
     // Pointer();
     // PointerExersize();
-    Array();
-
+    // Array();
+    ArrayExersize();
 }
