@@ -639,7 +639,7 @@ void PrintArray(int arr[], int length) {
 
 void MaxArray(int arr[], int length) { 
     int maximum = arr[0];
-    for (int i = 0; i < length; i++) {
+    for (int i = 1; i < length; i++) {
         if(arr[i] > maximum ) { // *(arr + (i + 1))
             maximum = arr[i];
         }
@@ -648,11 +648,25 @@ void MaxArray(int arr[], int length) {
     std::cout << maximum << std::endl;
 }
 
+void reverseArray(int arr[], int length) { 
+    int last = length - 1;
+    for (int i = 0; i < length / 2; i++) {
+        int current = arr[i];
+        arr[i] = arr[last];
+        arr[last] = current;
+        last--;
+    }
+
+    PrintArray(arr, length);
+}
+
 void ArrayExersize() {
-    int array[] = {1, 2, 8, 3, 4, 5};
+    int array[] = {1, 2, 3, 4, 5, 6};
     int length = sizeof(array) / sizeof(int);
     // PrintArray(array, length);
-    MaxArray(array, length);
+    // MaxArray(array, length);
+    reverseArray(array, length);
+
 
 }
 
