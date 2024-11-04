@@ -660,12 +660,35 @@ void reverseArray(int arr[], int length) {
     PrintArray(arr, length);
 }
 
+
+// int length => 0x111111 => 5
+// int a[length] => 0x2222222=> {5,7,2,12,1}
+// int *aPtr => 0x33333333 => 0x111111
+
+
+void findResult() { 
+    const int length = 5;
+    int a[length] = {5,7,2,12,1};
+    int *aPtr = a;
+    *(a + 3) = 5;
+    int b = a[0] * *(a+2) - (a[1] + aPtr[4] - (*aPtr+4));
+    aPtr += 2;
+    aPtr[1] = 100;
+    int c = a[4] - a[2] * *(aPtr - 1) + b;
+
+
+
+    std::cout << c << std::endl;
+}
+
 void ArrayExersize() {
     int array[] = {1, 2, 3, 4, 5, 6};
     int length = sizeof(array) / sizeof(int);
     // PrintArray(array, length);
     // MaxArray(array, length);
-    reverseArray(array, length);
+    // reverseArray(array, length);
+    findResult();
+
 
 
 }
