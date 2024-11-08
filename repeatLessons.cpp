@@ -687,7 +687,41 @@ void ArrayExersize() {
     // PrintArray(array, length);
     // MaxArray(array, length);
     // reverseArray(array, length);
-    findResult();
+    // findResult();
+}
+void foo(char *z) {
+    std::cout <<  z  <<  "new line" << std::endl;
+}
+
+void printYourName() {
+    char title[] = "What is your name?";
+    std::cout << title << "\n";
+
+    char name[100];
+    std::cin >> name;
+    std::cout <<  "your name is "  <<  name << std::endl;
+
+    // there is a way to write string more concis way
+
+    std::string newName = "Your name";
+
+}
+
+void CharExersize() {
+    // char text[] = {72,'e','l','l','o','\n',0};
+    // char text[] = "Hello";
+    // foo(text);
+    // std::cout << static_cast<void*>(pText) << std::endl;
+    // printYourName();
+}
+
+void StringExersize() {
+    // std::string messaeg = "Hello Armenia\n";
+    // std::cout << messaeg;
+
+    std::cout << "Hello" << "\n" << "Armenia" << "\n";
+
+
 
 
 
@@ -712,5 +746,7 @@ void RepeatLessons() {
     // Pointer();
     // PointerExersize();
     // Array();
-    ArrayExersize();
+    // ArrayExersize();
+    // CharExersize();
+    StringExersize();
 }
