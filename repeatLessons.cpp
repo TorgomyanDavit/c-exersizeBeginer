@@ -716,15 +716,22 @@ void CharExersize() {
 }
 
 void StringExersize() {
-    // std::string messaeg = "Hello Armenia\n";
+    std::string messaeg = "Hello";
+    std::string messaeg2 = "world this is fun";
+    std::string messaeg3 = messaeg + messaeg2;
+    int number = 55;
+    int result = messaeg3.find("44");
+
     // std::cout << messaeg;
+    // std::cout << "Hello" << "\n" << "Armenia" << "\n";
+    // std::cout << messaeg3.length() << "\n";
+    // std::cout << messaeg3.substr(6,4) << "\n";
+    // std::cout << messaeg3 + " " + std::to_string(number) << "\n";
+    std::cout << result << "\n";
+}
 
-    std::cout << "Hello" << "\n" << "Armenia" << "\n";
-
-
-
-
-
+void MultipleArray() {
+    
 }
 
 void RepeatLessons() {
@@ -748,5 +755,7 @@ void RepeatLessons() {
     // Array();
     // ArrayExersize();
     // CharExersize();
-    StringExersize();
+    // StringExersize();
+    MultipleArray();
+
 }
