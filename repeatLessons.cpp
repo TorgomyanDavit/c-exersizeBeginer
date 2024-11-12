@@ -731,7 +731,22 @@ void StringExersize() {
 }
 
 void MultipleArray() {
-    
+    // int a[10] = {1,2,3,4,5};
+    // std::cout << *(*nestedArray + 4);
+    int nestedArray[3][5] = {
+        {1, 2, 3, 4, 5},
+        {6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15}
+    };
+
+    int numRows = sizeof(nestedArray) / sizeof(nestedArray[0]);
+    int numCols = sizeof(nestedArray[0]) / sizeof(nestedArray[0][0]);
+
+
+    std::cout << "Number of columns: " << sizeof(nestedArray[0]) << std::endl;
+    std::cout << "Number of columns: " << sizeof(nestedArray) << std::endl;
+    // std::cout << "Number of rows: " << numRows << std::endl;
+    // std::cout << "Number of columns: " << numCols << std::endl;
 }
 
 void RepeatLessons() {
