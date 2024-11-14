@@ -733,20 +733,58 @@ void StringExersize() {
 void MultipleArray() {
     // int a[10] = {1,2,3,4,5};
     // std::cout << *(*nestedArray + 4);
-    int nestedArray[3][5] = {
-        {1, 2, 3, 4, 5},
-        {6, 7, 8, 9, 10},
-        {11, 12, 13, 14, 15}
+    // std::cout << "Number of columns: " << sizeof(nestedArray[0]) << std::endl;
+    // std::cout << "Number of columns: " << sizeof(nestedArray) << std::endl;
+    // nestedArray[2][2] = 100;
+    // std::cout << nestedArray[2][2] << std::endl;
+    // int nestedArray[3][5] = {
+    //     {1, 2, 3, 4, 5},
+    //     {6, 7, 8, 9, 10},
+    //     {11, 12, 13, 14, 15}
+    // };
+
+    // int numRows = sizeof(nestedArray) / sizeof(nestedArray[0]);
+    // int numCols = sizeof(nestedArray[0]) / sizeof(nestedArray[0][0]);
+
+    // for(int i = 0; i < numRows; i++) {
+    //     for(int i2 = 0; i2 < numCols; i2++) {
+    //         std::cout << nestedArray[i][i2] << std::endl;
+    //     }
+    // }
+
+
+    int nestedArray[3][3][5] = {
+        {
+            {1, 2, 3, 4, 5},
+            {6, 7, 8, 9, 10},
+            {11, 12, 13, 14, 15}
+        },
+        {
+            {1, 2, 3, 4, 5},
+            {6, 7, 8, 9, 10},
+            {11, 12, 13, 14, 15}
+        },
+        {
+            {1, 2, 3, 4, 5},
+            {6, 7, 8, 9, 10},
+            {11, 12, 13, 14, 15}
+        }
     };
 
     int numRows = sizeof(nestedArray) / sizeof(nestedArray[0]);
     int numCols = sizeof(nestedArray[0]) / sizeof(nestedArray[0][0]);
+    int thirdCols = sizeof(nestedArray[0][0]) / sizeof(nestedArray[0][0][0]);
 
 
+    
+    for(int i = 0; i < numRows; i++) {
+        for(int i2 = 0; i2 < numCols; i2++) {
+            for(int i3 = 0; i3 < thirdCols; i3++) {
+                std::cout << nestedArray[i][i2][i3] << std::endl;
+            }
+        }
+    }
     std::cout << "Number of columns: " << sizeof(nestedArray[0]) << std::endl;
-    std::cout << "Number of columns: " << sizeof(nestedArray) << std::endl;
-    // std::cout << "Number of rows: " << numRows << std::endl;
-    // std::cout << "Number of columns: " << numCols << std::endl;
 }
 
 void RepeatLessons() {
