@@ -787,6 +787,41 @@ void MultipleArray() {
     std::cout << "Number of columns: " << sizeof(nestedArray[0]) << std::endl;
 }
 
+void printBoard(char board[3][3],int numRows,int numCols) {
+    
+    for(int i = 0;i < numRows;i++) {
+        for(int i2 = 0;i2 < numCols;i2++) {
+            std::cout << " | ";
+            std::cout << board[i][i2];
+        };
+        std::cout << '\n';
+
+
+    };
+
+}
+
+void TikTakToe() {
+    char x = 'x';
+    char o = '0';
+    char empty = '8';
+
+
+    char board[3][3]= {
+        {'9', empty, empty},
+        {'p', empty, empty},
+        {'p', empty, empty},
+
+    };
+    int numRows = sizeof(board) / sizeof(board[0]);
+    int numCols = sizeof(board[0]) / sizeof(board[0][0]);
+
+
+    printBoard(board,numRows,numCols);
+
+
+}
+
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
     // STD_CIN_LESSONS();
@@ -809,6 +844,7 @@ void RepeatLessons() {
     // ArrayExersize();
     // CharExersize();
     // StringExersize();
-    MultipleArray();
+    // MultipleArray();
+    TikTakToe();
 
 }
