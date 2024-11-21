@@ -791,11 +791,12 @@ void printBoard(char board[3][3],int numRows,int numCols) {
     
     for(int i = 0;i < numRows;i++) {
         for(int i2 = 0;i2 < numCols;i2++) {
-            std::cout << " | ";
-            std::cout << board[i][i2];
+            if(i2 != 0 && i2 != numCols)  {
+                std::cout << " | ";
+            }
+            std::cout << " " << board[i][i2];
         };
-        std::cout << '\n';
-
+        std::cout << '\n'  << "---+---+---" << "\n";
 
     };
 
