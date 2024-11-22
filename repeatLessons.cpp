@@ -829,12 +829,14 @@ void TikTakToe() {
         std::cout << "Please enter the column" << std::endl;
         std::cin >> column;
 
-        if(board[row][column] == ' ') {
-            board[row][column] = player;
+        if(board[row][column] == ' ') { 
+            board[row][column] = player; // fill field 
+            if(player == xPlayer) {player = oPlayer;} else {player = xPlayer;} // chnage player 
+        } else { 
+            std::cout << "field alreready busy" << std::endl;
         }
 
         printBoard(board,numRows,numCols);
-        if(player == xPlayer) {player = oPlayer;} else {player = xPlayer;}
 
     }
 }
