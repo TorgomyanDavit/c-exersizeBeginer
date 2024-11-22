@@ -792,35 +792,51 @@ void printBoard(char board[3][3],int numRows,int numCols) {
     for(int i = 0;i < numRows;i++) {
         for(int i2 = 0;i2 < numCols;i2++) {
             if(i2 != 0 && i2 != numCols)  {
-                std::cout << " | ";
+                std::cout << " |";
             }
             std::cout << " " << board[i][i2];
         };
         std::cout << '\n'  << "---+---+---" << "\n";
-
     };
 
 }
 
 void TikTakToe() {
-    char x = 'x';
-    char o = '0';
-    char empty = '8';
+    char xPlayer = 'x';
+    char oPlayer = 'o';
+    char empty = ' ';
+    
+    char player = xPlayer;
 
 
     char board[3][3]= {
-        {'9', empty, empty},
-        {'p', empty, empty},
-        {'p', empty, empty},
-
+        {empty, empty, empty},
+        {empty, empty, empty},
+        {empty, empty, empty},
     };
     int numRows = sizeof(board) / sizeof(board[0]);
     int numCols = sizeof(board[0]) / sizeof(board[0][0]);
 
-
     printBoard(board,numRows,numCols);
 
+    int row,column;
+    while(true) {
+        std::cout << "now is playing" << "  " << player  << "Player" << std::endl;
+        
+        std::cout << "Please enter the row" << std::endl;
+        std::cin >> row;
 
+        std::cout << "Please enter the column" << std::endl;
+        std::cin >> column;
+
+        if(board[row][column] == ' ') {
+            board[row][column] = player;
+        }
+
+        printBoard(board,numRows,numCols);
+        if(player == xPlayer) {player = oPlayer;} else {player = xPlayer;}
+
+    }
 }
 
 void RepeatLessons() {
