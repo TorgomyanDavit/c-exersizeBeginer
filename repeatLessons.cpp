@@ -787,6 +787,7 @@ void MultipleArray() {
     std::cout << "Number of columns: " << sizeof(nestedArray[0]) << std::endl;
 }
 
+
 void printBoard(char board[3][3],int numRows,int numCols) {
     
     for(int i = 0;i < numRows;i++) {
@@ -798,13 +799,45 @@ void printBoard(char board[3][3],int numRows,int numCols) {
         };
         std::cout << '\n'  << "---+---+---" << "\n";
     };
+}
 
+bool isLegalMove(int row,int column,char board[3][3],char empty) {
+    return row >= 0 && row <= 2 && column >= 0 && column <= 2 && board[row][column] == ' ';
+}
+
+bool didWin(char board[3][3],char player,char empty) {
+    if(
+        (board[0][0] == player && board[0][1] == player && board[0][2] == player) || 
+        (board[1][0] == player && board[1][1] == player && board[1][2]== player) || 
+        (board[2][0] == player && board[2][1] == player && board[2][2]== player) || 
+
+        (board[0][0] == player && board[1][0] == player && board[1][2]== player) || 
+        (board[0][1] == player && board[1][1] == player && board[2][1]== player) || 
+        (board[0][2] == player && board[1][2] == player && board[2][2]== player) || 
+
+        (board[0][0] == player && board[1][1] == player && board[2][2]== player) ||
+        (board[0][2] == player && board[1][1] == player && board[2][0]== player)
+    ) { return true; };
+    
+    return false;
+}
+
+bool didEnd(char board[3][3],int numRows,int numCols) {
+    for(int i = 0;i < numRows;i++) {
+        for(int i2 = 0;i2 < numCols;i2++) {
+            if(board[i][i2] == ' ')  {
+                return false;
+            }
+        };
+    };
+
+    return true;
 }
 
 void TikTakToe() {
-    char xPlayer = 'x';
-    char oPlayer = 'o';
-    char empty = ' ';
+    const char xPlayer = 'x';
+    const char oPlayer = 'o';
+    const char empty = ' ';
     
     char player = xPlayer;
 
@@ -829,14 +862,26 @@ void TikTakToe() {
         std::cout << "Please enter the column" << std::endl;
         std::cin >> column;
 
-        if(board[row][column] == ' ') { 
-            board[row][column] = player; // fill field 
-            if(player == xPlayer) {player = oPlayer;} else {player = xPlayer;} // chnage player 
-        } else { 
-            std::cout << "field alreready busy" << std::endl;
+        if(isLegalMove(row,column,board,empty) == false) { 
+            std::cout << "not a legal move you lose" << std::endl;
+            break;
         }
 
+        board[row][column] = player; // fill field 
+
+        if(didWin(board,player,empty) == true) {
+            std::cout << "winner is " <<  player << std::endl;
+            break;
+        };
+
+        if(didEnd(board,numRows,numCols) == true) {
+            std::cout << "game over is equal no onw did" <<  player << std::endl;
+            break;
+        };
+        
         printBoard(board,numRows,numCols);
+
+        if(player == xPlayer) {player = oPlayer;} else {player = xPlayer;} // change player 
 
     }
 }
