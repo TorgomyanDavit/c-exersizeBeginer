@@ -797,8 +797,11 @@ void printBoard(char board[3][3],int numRows,int numCols) {
             }
             std::cout << " " << board[i][i2];
         };
-        std::cout << '\n'  << "---+---+---" << "\n";
+        if(i != numRows - 1) {
+            std::cout << '\n'  << "---+---+---" << "\n";
+        }
     };
+    std::cout << "\n";
 }
 
 bool isLegalMove(int row,int column,char board[3][3],char empty) {
@@ -822,10 +825,10 @@ bool didWin(char board[3][3],char player,char empty) {
     return false;
 }
 
-bool didEnd(char board[3][3],int numRows,int numCols) {
+bool didEnd(char board[3][3],int numRows,int numCols,char empty) {
     for(int i = 0;i < numRows;i++) {
         for(int i2 = 0;i2 < numCols;i2++) {
-            if(board[i][i2] == ' ')  {
+            if(board[i][i2] == empty)  {
                 return false;
             }
         };
@@ -874,7 +877,7 @@ void TikTakToe() {
             break;
         };
 
-        if(didEnd(board,numRows,numCols) == true) {
+        if(didEnd(board,numRows,numCols,empty) == true) {
             std::cout << "game over is equal no onw did" <<  player << std::endl;
             break;
         };
@@ -884,6 +887,28 @@ void TikTakToe() {
         if(player == xPlayer) {player = oPlayer;} else {player = xPlayer;} // change player 
 
     }
+}
+
+int zoo(int a, int b) {
+    int d = a + d;
+    return d;
+}
+
+int foo(int z, int d) {
+    int b = z + d;
+    int y = zoo(b, d);
+    int u = zoo(y, z);
+
+    return u;
+}
+
+void MemoryMenegment() {
+    int a = 1;
+    int b = 2;
+    int c = foo(a,b);
+    int d = a + b;
+    int e = foo(b, c);
+    std::cout << c + e << std::endl;
 }
 
 void RepeatLessons() {
@@ -909,6 +934,10 @@ void RepeatLessons() {
     // CharExersize();
     // StringExersize();
     // MultipleArray();
-    TikTakToe();
+    // TikTakToe();
+    // TikTakToe();
+    MemoryMenegment();
+
+
 
 }
