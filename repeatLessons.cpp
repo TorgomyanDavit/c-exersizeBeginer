@@ -890,7 +890,7 @@ void TikTakToe() {
 }
 
 int zoo(int a, int b) {
-    int d = a + d;
+    int d = a + b;
     return d;
 }
 
