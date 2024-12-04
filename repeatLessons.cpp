@@ -902,13 +902,37 @@ int foo(int z, int d) {
     return u;
 }
 
-void MemoryMenegment() {
+void MemoryMenegmentStack() {
     int a = 1;
     int b = 2;
     int c = foo(a,b);
     int d = a + b;
     int e = foo(b, c);
     std::cout << c + e << std::endl;
+}
+
+// int* fooHeap() {
+//     // int *a = new int(1); /** keep pointer in heap */
+//     int a = 1;  /** DANGLING POINTER */
+
+//     return &a; 
+// }
+
+
+int* fooHeap() {
+    // int*a[3];  Dangling pointer
+    int* a = new int[3]; 
+    a[0] = 4;
+    a[1] = 55;
+    a[2] = 23;
+
+    return a; 
+}
+
+void MemoryMenegmentHeap() {
+    int *b = fooHeap();
+    std::cout << *b << std::endl;
+    delete[] b;
 }
 
 void RepeatLessons() {
@@ -936,7 +960,9 @@ void RepeatLessons() {
     // MultipleArray();
     // TikTakToe();
     // TikTakToe();
-    MemoryMenegment();
+    // MemoryMenegmentStack();
+    MemoryMenegmentHeap();
+
 
 
 
