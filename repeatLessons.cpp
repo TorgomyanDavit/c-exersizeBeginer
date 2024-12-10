@@ -935,6 +935,34 @@ void MemoryMenegmentHeap() {
     delete[] b;
 }
 
+
+class Rectangle {
+    public:
+        int width;
+        int length;
+        int height;
+
+};
+
+void ClassesLessons() {
+    Rectangle r1;
+
+    r1.width = 100;
+    r1.height = 400;
+    std::cout << r1.width << std::endl;
+
+    Rectangle r2;
+    r2.width = 150;
+    r2.height = 900;
+
+    // int rectangleWidth = 10;
+    // int rectangleWeight = 20;
+
+    // int rectangleWidthL = 100;
+    // int rectangleWeightL = 200;
+
+}
+
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
     // STD_CIN_LESSONS();
@@ -961,9 +989,6 @@ void RepeatLessons() {
     // TikTakToe();
     // TikTakToe();
     // MemoryMenegmentStack();
-    MemoryMenegmentHeap();
-
-
-
-
+    // MemoryMenegmentHeap();
+    ClassesLessons();
 }
