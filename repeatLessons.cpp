@@ -937,30 +937,38 @@ void MemoryMenegmentHeap() {
 
 
 class Rectangle {
+    private :
+        int foo;
+
+
     public:
         int width;
-        int length;
         int height;
+        Rectangle(int w,int h) {
+            int width = w;
+            int height = h;
+        };
+  
+
+        int area() {
+            return width * height;
+        }
 
 };
 
 void ClassesLessons() {
-    Rectangle r1;
+    Rectangle r1(100,400);
 
-    r1.width = 100;
-    r1.height = 400;
-    std::cout << r1.width << std::endl;
+    std::cout << r1.area() << std::endl;
 
-    Rectangle r2;
-    r2.width = 150;
-    r2.height = 900;
+    
 
-    // int rectangleWidth = 10;
-    // int rectangleWeight = 20;
 
-    // int rectangleWidthL = 100;
-    // int rectangleWeightL = 200;
 
+
+    // Rectangle r2;
+    // r2.width = 150;
+    // r2.height = 900;
 }
 
 void RepeatLessons() {
