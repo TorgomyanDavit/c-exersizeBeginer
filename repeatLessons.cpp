@@ -940,26 +940,34 @@ class Rectangle {
     private :
         int foo;
 
-
     public:
         int width;
         int height;
         Rectangle(int w,int h) {
-            int width = w;
-            int height = h;
+            width = w;
+            height = h;
+            foo = 100;
         };
-  
 
-        int area() {
-            return width * height;
-        }
+        ~Rectangle() {
+            std::cout << "Rectangle is delete from heap" << std::endl;
+        };
+        int area(int a);
 
+        // int area() {
+        //     return width * height * foo;
+        // }
 };
+
+int Rectangle::area(int a) {
+    return width * height * foo;
+}
+
 
 void ClassesLessons() {
     Rectangle r1(100,400);
 
-    std::cout << r1.area() << std::endl;
+    std::cout << r1.area(10) << std::endl;
 
     
 
