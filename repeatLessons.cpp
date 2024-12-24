@@ -936,38 +936,72 @@ void MemoryMenegmentHeap() {
 }
 
 
-class Rectangle {
-    private :
-        int foo;
+// class Rectangle {
+//     private :
+//         int foo;
 
+//     public:
+//         int width;
+//         int height;
+//         Rectangle(int w,int h) {
+//             width = w;
+//             height = h;
+//             foo = 100;
+//         };
+
+//         ~Rectangle() {
+//             std::cout << "Rectangle is delete from heap" << std::endl;
+//         };
+//         int area(int a);
+
+//         // int area() {
+//         //     return width * height * foo;
+//         // }
+// };
+
+// int Rectangle::area(int a) {
+//     return width * height * foo;
+// }
+
+class Rectangle {
     public:
         int width;
         int height;
+
+        Rectangle() {
+            width = 10;
+            height = 20;
+        };
+        Rectangle(int w) {
+            width = w;
+            height = 20;
+        };
         Rectangle(int w,int h) {
             width = w;
             height = h;
-            foo = 100;
         };
-
         ~Rectangle() {
-            std::cout << "Rectangle is delete from heap" << std::endl;
+            std::cout << "Destraktor Rectangle is delete from heap" << std::endl;
         };
-        int area(int a);
-
-        // int area() {
-        //     return width * height * foo;
-        // }
+        int area() {
+            return width * height;
+        }
+        int area(int foo) {
+            return foo * 2;
+        }
+    private:
+    protected:
 };
 
-int Rectangle::area(int a) {
-    return width * height * foo;
-}
 
+void foo(Rectangle z) {
+    z.width = 3;
+};
 
 void ClassesLessons() {
-    Rectangle r1(100,400);
-
-    std::cout << r1.area(10) << std::endl;
+    Rectangle a(7);
+    foo(a);
+    std::cout << a.width << std::endl;
 
     
 
