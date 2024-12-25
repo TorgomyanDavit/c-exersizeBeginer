@@ -994,19 +994,31 @@ class Rectangle {
 };
 
 
-void foo(Rectangle z) {
-    z.width = 3;
-};
+// void foo(Rectangle z) {
+//     z.width = 3;
+//     std::cout << z.width << std::endl;
+// };
+
+// void foo(Rectangle *z) {
+//     (*z).width = 3;
+// };
+
+// Rectangle foo() {
+//     Rectangle a(7);
+//     return a;
+// };
 
 void ClassesLessons() {
-    Rectangle a(7);
-    foo(a);
-    std::cout << a.width << std::endl;
+    // Rectangle a(7);
+    // foo(a);
+    // std::cout << a.width << std::endl;
 
-    
+    // foo(&a); =>  3 referance pointer
+    // foo(&a); =>  3 referance pointer
 
-
-
+    // Rectangle *a = new Rectangle(4,3);
+    // std::cout << (*a).width << " pointer way it some for (*a).width " << a -> width << std::endl;
+    // delete a;
 
     // Rectangle r2;
     // r2.width = 150;
