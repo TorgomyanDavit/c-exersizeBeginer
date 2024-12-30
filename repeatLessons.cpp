@@ -963,35 +963,35 @@ void MemoryMenegmentHeap() {
 //     return width * height * foo;
 // }
 
-class Rectangle {
-    public:
-        int width;
-        int height;
+// class Rectangle {
+//     public:
+//         int width;
+//         int height;
 
-        Rectangle() {
-            width = 10;
-            height = 20;
-        };
-        Rectangle(int w) {
-            width = w;
-            height = 20;
-        };
-        Rectangle(int w,int h) {
-            width = w;
-            height = h;
-        };
-        ~Rectangle() {
-            std::cout << "Destraktor Rectangle is delete from heap" << std::endl;
-        };
-        int area() {
-            return width * height;
-        }
-        int area(int foo) {
-            return foo * 2;
-        }
-    private:
-    protected:
-};
+//         Rectangle() {
+//             width = 10;
+//             height = 20;
+//         };
+//         Rectangle(int w) {
+//             width = w;
+//             height = 20;
+//         };
+//         Rectangle(int w,int h) {
+//             width = w;
+//             height = h;
+//         };
+//         ~Rectangle() {
+//             std::cout << "Destraktor Rectangle is delete from heap" << std::endl;
+//         };
+//         int area() {
+//             return width * height;
+//         }
+//         int area(int foo) {
+//             return foo * 2;
+//         }
+//     private:
+//     protected:
+// };
 
 
 // void foo(Rectangle z) {
@@ -1008,6 +1008,38 @@ class Rectangle {
 //     return a;
 // };
 
+/** A `struct` is similar to a `class`, but one key difference is that members of a 
+ * `struct` are public by default, so you don’t need to explicitly write the `public` keyword for them. In contrast, members of a `class` are private by default unless specified otherwise.
+*/
+struct Rectangle {
+    int width;
+    int height;
+
+    Rectangle() {
+        width = 10;
+        height = 20;
+    };
+    Rectangle(int w) {
+        width = w;
+        height = 20;
+    };
+    Rectangle(int w,int h) {
+        width = w;
+        height = h;
+    };
+    ~Rectangle() {
+        std::cout << "Destraktor Rectangle is delete from heap" << std::endl;
+    };
+    int area() {
+        return width * height;
+    }
+    int area(int foo) {
+        return foo * 2;
+    }
+    private:
+    protected:
+};
+
 void ClassesLessons() {
     // Rectangle a(7);
     // foo(a);
@@ -1023,6 +1055,33 @@ void ClassesLessons() {
     // Rectangle r2;
     // r2.width = 150;
     // r2.height = 900;
+}
+
+void StructLessons() {
+    Rectangle a(7);
+    // foo(a);
+    std::cout << a.area() << std::endl;
+    // foo(&a); =>  3 referance pointer
+    // foo(&a); =>  3 referance pointer
+
+    // Rectangle *a = new Rectangle(4,3);
+    // std::cout << (*a).width << " pointer way it some for (*a).width " << a -> width << std::endl;
+    // delete a;
+
+    // Rectangle r2;
+    // r2.width = 150;
+    // r2.height = 900;
+}
+
+int foo() {
+    int a = 10;
+    int *b = &a;
+    *b = 20;
+    std::cout << *b << std::endl;
+}
+
+int* References() {
+    foo();
 }
 
 void RepeatLessons() {
@@ -1052,5 +1111,15 @@ void RepeatLessons() {
     // TikTakToe();
     // MemoryMenegmentStack();
     // MemoryMenegmentHeap();
-    ClassesLessons();
+    // ClassesLessons();
+    // StructLessons();
+    References();
 }
+
+// // I write hear this to every time rember how work dangling pointer
+// int* DanglingHeap() {
+//     // int *a = new int(1); /** keep pointer in heap */
+//     int a = 1;  /** DANGLING POINTER */
+
+//     return &a; 
+// }
