@@ -1040,6 +1040,34 @@ struct Rectangle {
     protected:
 };
 
+// class Rectangle {
+//     int width;
+//     int height;
+//     Rectangle() {
+//         width = 10;
+//         height = 20;
+//     };
+//     Rectangle(int w) {
+//         width = w;
+//         height = 20;
+//     };
+//     Rectangle(int w,int h) {
+//         width = w;
+//         height = h;
+//     };
+//     ~Rectangle() {
+//         std::cout << "Destraktor Rectangle is delete from heap" << std::endl;
+//     };
+//     int area() {
+//         return width * height;
+//     }
+//     int area(int foo) {
+//         return foo * 2;
+//     }
+//     private:
+//     protected:
+// };
+
 void ClassesLessons() {
     // Rectangle a(7);
     // foo(a);
@@ -1073,15 +1101,26 @@ void StructLessons() {
     // r2.height = 900;
 }
 
-int foo() {
-    int a = 10;
-    int *b = &a;
-    *b = 20;
-    std::cout << *b << std::endl;
+void refFoo(int *b) {
+    *b = 50;
+    std::cout << "Address of b: " << &b << std::endl; // Get the address of b
 }
 
+
+void someFoo(int &b) {
+    b = 50;
+    std::cout << "Value of b: " << b << std::endl;
+    std::cout << "Address of b: " << &b << std::endl; // Get the address of b
+}
+
+
 int* References() {
-    foo();
+    int a = 10;
+    refFoo(&a);
+    // someFoo(a);
+
+
+    std::cout << "Address of b: " << &a << std::endl; // Get the address of b
 }
 
 void RepeatLessons() {
