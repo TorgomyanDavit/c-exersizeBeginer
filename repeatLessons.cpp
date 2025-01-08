@@ -1114,13 +1114,19 @@ void someFoo(int &b) {
 }
 
 
-int* References() {
+int References() {
     int a = 10;
     refFoo(&a);
     // someFoo(a);
 
 
     std::cout << "Address of b: " << &a << std::endl; // Get the address of b
+}
+
+int CopyConstructors() {
+
+
+    std::cout << "Address of b: "<< std::endl; // Get the address of b
 }
 
 void RepeatLessons() {
@@ -1152,7 +1158,10 @@ void RepeatLessons() {
     // MemoryMenegmentHeap();
     // ClassesLessons();
     // StructLessons();
-    References();
+    // References();
+    // CopyConstructors();
+
+
 }
 
 // // I write hear this to every time rember how work dangling pointer
