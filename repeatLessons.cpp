@@ -1123,14 +1123,39 @@ int References() {
     std::cout << "Address of b: " << &a << std::endl; // Get the address of b
 }
 
-int CopyConstructors() {
+class CopyConstructors {
+    public:
+        int bar;
+        char *buffer ;
+        CopyConstructors() {
+            buffer = new char[6];
+            buffer[0] = 'H';
+            buffer[1] = 'e';
+            buffer[2] = 'l';    
+            buffer[3] = 'l';
+            buffer[4] = 'o';
+            buffer[5] = '\0';
+        }
+        ~CopyConstructors() {
+            std::cout << "Destructor" << std::endl;
+            delete[] buffer;
+        }
+};
 
-
-    std::cout << "Address of b: "<< std::endl; // Get the address of b
+void Fnc(CopyConstructors b) {
+    b.bar = 100;
+    b.buffer[0] = 'A';
 }
 
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
+    CopyConstructors a;
+    a.bar = 10;
+    // Fnc(a);
+    
+    std::cout << a.buffer << std::endl;
+
+
     // STD_CIN_LESSONS();
     // IF_AND_ELSE_LESSONS();
     // FOR_LOOP();
