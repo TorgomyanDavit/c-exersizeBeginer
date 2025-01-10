@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <vector>
 #include <algorithm>
+#include <string.h>
 using namespace std;
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 
@@ -684,6 +685,8 @@ void findResult() {
 void ArrayExersize() {
     int array[] = {1, 2, 3, 4, 5, 6};
     int length = sizeof(array) / sizeof(int);
+    std::cout <<  length  <<  "length" << std::endl;
+
     // PrintArray(array, length);
     // MaxArray(array, length);
     // reverseArray(array, length);
@@ -708,7 +711,10 @@ void printYourName() {
 }
 
 void CharExersize() {
-    // char text[] = {72,'e','l','l','o','\n',0};
+    char text[] = {72,'e','l','l','o','\n',0};
+    int length = sizeof(text) / sizeof(char);
+    std::cout <<  length  <<  "length" << std::endl;
+
     // char text[] = "Hello";
     // foo(text);
     // std::cout << static_cast<void*>(pText) << std::endl;
@@ -1126,8 +1132,11 @@ int References() {
 class CopyConstructors {
     public:
         int bar;
-        char *buffer ;
+        char *buffer;
+        // char buffer[6] = {72,'e','l','l','o',0};
+
         CopyConstructors() {
+            std::cout << "Constructor" << std::endl;
             buffer = new char[6];
             buffer[0] = 'H';
             buffer[1] = 'e';
@@ -1136,24 +1145,35 @@ class CopyConstructors {
             buffer[4] = 'o';
             buffer[5] = '\0';
         }
+        CopyConstructors(CopyConstructors &other) {
+            // std::cout << "Constructor Copy" << std::endl;
+            bar = 50;            
+            int size = sizeof(other.buffer);
+            std::cout << size << std::endl;
+
+        }
         ~CopyConstructors() {
-            std::cout << "Destructor" << std::endl;
-            delete[] buffer;
+            // std::cout << "Destructor" << std::endl;
+            // delete[] buffer;
         }
 };
 
 void Fnc(CopyConstructors b) {
-    b.bar = 100;
+    // std::cout << "CopyConstructors b" << std::endl;
+    // std::cout << b.bar << std::endl;
     b.buffer[0] = 'A';
 }
 
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
     CopyConstructors a;
-    a.bar = 10;
-    // Fnc(a);
+    // std::cout << "CopyConstructors a" << std::endl;
+    // a.bar = 10;
+    Fnc(a);
     
-    std::cout << a.buffer << std::endl;
+    // std::cout << a.buffer << std::endl;
+    // std::cout << a.bar << std::endl;
+
 
 
     // STD_CIN_LESSONS();
@@ -1184,7 +1204,7 @@ void RepeatLessons() {
     // ClassesLessons();
     // StructLessons();
     // References();
-    // CopyConstructors();
+    CopyConstructors();
 
 
 }
