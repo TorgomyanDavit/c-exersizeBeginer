@@ -1176,6 +1176,7 @@ void RepeatLessons() {
     CopyConstructors a;
     // std::cout << "CopyConstructors a" << std::endl;
     // a.bar = 10;
+    
     Fnc(a);
     
     std::cout << a.buffer << " a.buffer" << std::endl;
