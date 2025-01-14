@@ -1144,16 +1144,18 @@ class CopyConstructors {
             buffer[3] = 'l';
             buffer[4] = 'o';
             buffer[5] = '\0';
+            bar = 100; // Initialize bar
         }
-        CopyConstructors(const CopyConstructors &other) {
-            // std::cout << "Constructor Copy" << std::endl;
-            // bar = 50;     
-            // int size = sizeof(other.buffer);
-            // buffer = new char[size];
-            // for (int i = 0; i < size; i++) {
-            //     buffer[i] = 'd';
-            // }
-        }
+        // CopyConstructors(const CopyConstructors &other) {
+        //     std::cout << "Constructor Copy" << std::endl;
+        //     int size = strlen(other.buffer) + 1;
+        //     // buffer = new char[size];
+        //     for (int i = 0; i < size; i++) {
+        //         buffer[i] = 'd';
+        //     }
+
+        //     // memccpy(buffer, other.buffer, '\0', size);
+        // }
         ~CopyConstructors() {
             std::cout << "Destructor" << std::endl;
             // delete[] buffer;
@@ -1161,10 +1163,12 @@ class CopyConstructors {
 };
 
 void Fnc(CopyConstructors b) {
-    // std::cout << "CopyConstructors b" << std::endl;
+    std::cout << "CopyConstructors b" << std::endl;
     // std::cout << b.bar << std::endl;
     // b.bar = 10;
-    // b.buffer[0] = 'A';
+    b.buffer[0] = 'A';
+
+    std::cout << b.buffer << " b" << std::endl;
 }
 
 void RepeatLessons() {
@@ -1174,8 +1178,8 @@ void RepeatLessons() {
     // a.bar = 10;
     Fnc(a);
     
-    std::cout << a.buffer << 'a.buffer' << std::endl;
-    std::cout << a.bar << 'a.bar' << std::endl;
+    std::cout << a.buffer << " a.buffer" << std::endl;
+    std::cout << a.bar << " a.bar" << std::endl;
 
 
 
