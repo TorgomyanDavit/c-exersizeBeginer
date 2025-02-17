@@ -1125,7 +1125,6 @@ int References() {
     refFoo(&a);
     // someFoo(a);
 
-
     std::cout << "Address of b: " << &a << std::endl; // Get the address of b
 }
 
@@ -1133,6 +1132,8 @@ class CopyConstructors {
     public:
         int bar;
         char *buffer;
+
+        // char buffer[6];
         // char buffer[6] = {72,'e','l','l','o',0};
 
         CopyConstructors() {
@@ -1144,43 +1145,47 @@ class CopyConstructors {
             buffer[3] = 'l';
             buffer[4] = 'o';
             buffer[5] = '\0';
-            bar = 100; // Initialize bar
+            // bar = 100; // Initialize bar
         }
-        // CopyConstructors(const CopyConstructors &other) {
-        //     std::cout << "Constructor Copy" << std::endl;
-        //     int size = strlen(other.buffer) + 1;
-        //     // buffer = new char[size];
-        //     for (int i = 0; i < size; i++) {
-        //         buffer[i] = 'd';
-        //     }
+        CopyConstructors(const CopyConstructors &other) {
+            std::cout << "Constructor Copy" << std::endl;
+            int size = strlen(other.buffer) + 1;
+            // std::cout << size << "size" << std::endl;
 
-        //     // memccpy(buffer, other.buffer, '\0', size);
-        // }
+            buffer = new char[size];
+            for (int i = 0; i < size; i++) {
+                buffer[i] = 'd';
+            }
+            buffer[size - 1] = '\0'; // Null terminator
+
+            // memccpy(buffer, other.buffer, '\0', size);
+
+        } 
         ~CopyConstructors() {
-            std::cout << "Destructor" << std::endl;
-            // delete[] buffer;
+            std::cout << "Destructor for delete heap info" << std::endl;
+            delete buffer;
         }
 };
 
-void Fnc(CopyConstructors b) {
+void Func(CopyConstructors b) {
     std::cout << "CopyConstructors b" << std::endl;
-    // std::cout << b.bar << std::endl;
-    // b.bar = 10;
+    std::cout << b.bar << std::endl;
+    b.bar = 100;
     b.buffer[0] = 'A';
 
-    std::cout << b.buffer << " b" << std::endl;
+    std::cout << b.buffer << " b.buffer" << std::endl;
 }
 
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
     CopyConstructors a;
-    // std::cout << "CopyConstructors a" << std::endl;
-    // a.bar = 10;
-    
-    Fnc(a);
-    
-    std::cout << a.buffer << " a.buffer" << std::endl;
+    a.bar = 10;
+    Func(a);
+
     std::cout << a.bar << " a.bar" << std::endl;
+    std::cout << a.buffer << " a.buffer" << std::endl;
+
+    // std::cout << "CopyConstructors a" << std::endl;
 
 
 
@@ -1212,7 +1217,7 @@ void RepeatLessons() {
     // ClassesLessons();
     // StructLessons();
     // References();
-    // CopyConstructors();
+    CopyConstructors();
 
 
 }
