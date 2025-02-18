@@ -1017,38 +1017,39 @@ void MemoryMenegmentHeap() {
 /** A `struct` is similar to a `class`, but one key difference is that members of a 
  * `struct` are public by default, so you don’t need to explicitly write the `public` keyword for them. In contrast, members of a `class` are private by default unless specified otherwise.
 */
-struct Rectangle {
-    int width;
-    int height;
-
-    Rectangle() {
-        width = 10;
-        height = 20;
-    };
-    Rectangle(int w) {
-        width = w;
-        height = 20;
-    };
-    Rectangle(int w,int h) {
-        width = w;
-        height = h;
-    };
-    ~Rectangle() {
-        std::cout << "Destraktor Rectangle is delete from heap" << std::endl;
-    };
-    int area() {
-        return width * height;
-    }
-    int area(int foo) {
-        return foo * 2;
-    }
-    private:
-    protected:
-};
-
-// class Rectangle {
+// struct Rectangle {
 //     int width;
 //     int height;
+
+//     Rectangle() {
+//         width = 10;
+//         height = 20;
+//     };
+//     Rectangle(int w) {
+//         width = w;
+//         height = 20;
+//     };
+//     Rectangle(int w,int h) {
+//         width = w;
+//         height = h;
+//     };
+//     ~Rectangle() {
+//         std::cout << "Destraktor Rectangle is delete from heap" << std::endl;
+//     };
+//     int area() {
+//         return width * height;
+//     }
+//     int area(int foo) {
+//         return foo * 2;
+//     }
+//     private:
+//     protected:
+// };
+
+// class Rectangle {
+//     public :
+//         int width;
+//         int height;
 //     Rectangle() {
 //         width = 10;
 //         height = 20;
@@ -1092,9 +1093,9 @@ void ClassesLessons() {
 }
 
 void StructLessons() {
-    Rectangle a(7);
+    // Rectangle a(7);
     // foo(a);
-    std::cout << a.area() << std::endl;
+    // std::cout << a.area() << std::endl;
     // foo(&a); =>  3 referance pointer
     // foo(&a); =>  3 referance pointer
 
@@ -1214,10 +1215,14 @@ void RepeatLessons() {
     // TikTakToe();
     // MemoryMenegmentStack();
     // MemoryMenegmentHeap();
-    // ClassesLessons();
+    ClassesLessons();
     // StructLessons();
     // References();
-    CopyConstructors();
+    /* 
+        CopyConstructors a;
+        a.bar = 10;
+        Func(a);
+    */
 
 
 }
