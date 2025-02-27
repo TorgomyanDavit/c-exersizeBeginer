@@ -1177,17 +1177,66 @@ void Func(CopyConstructors b) {
     std::cout << b.buffer << " b.buffer" << std::endl;
 }
 
+
+/** OOP */
+class Address {
+    public:
+        std::string street;
+        std::string city;       
+        std::string country;
+        int postalCode;
+        Address(std::string street, std::string city, std::string country,int postalCode): street(street), city(city), country(country), postalCode(postalCode) {
+            // std::cout << "Person created: " << street << " " << city << std::endl;
+        }
+        void print() {
+            std::cout << street << city << country << postalCode << std::endl;
+        }
+};
+
+class Person {
+    private:
+        int foo;
+    protected:
+        int bar;
+    public:
+        std::string firstName;
+        std::string LastName;   
+        Address homeAddress;
+        Person(std::string f, std::string l) : firstName(f), LastName(l), homeAddress("street", "city", "country", 1) { 
+            std::cout << "Person created: " << firstName << " " << LastName << std::endl;
+        }
+        void print() {
+            std::cout << firstName << LastName << std::endl;
+        }
+        // friend class Employee;
+};
+
+class Employee : public Person {
+    public:
+        float salary;
+        Employee(std::string f, std::string l, float s) : salary(s), Person(f, l) {
+            // std::cout << "Employee created: " << salary << std::endl;
+            std::cout << "Employee created: " << bar << std::endl;
+        }
+};
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
-    CopyConstructors a;
-    a.bar = 10;
-    Func(a);
 
-    std::cout << a.bar << " a.bar" << std::endl;
-    std::cout << a.buffer << " a.buffer" << std::endl;
-
+    /* Copy Constructor*/
+    // CopyConstructors a;
+    // a.bar = 10;
+    // Func(a);
+    // std::cout << a.bar << " a.bar" << std::endl;
+    // std::cout << a.buffer << " a.buffer" << std::endl;
     // std::cout << "CopyConstructors a" << std::endl;
 
+
+    /* OOP lessons */ 
+    // Person person1("Paruyr","Sevak");
+    // person1.print();
+
+    Employee employee1("Davit","Torgomyan",5000);
+    // person1.print();
 
 
     // STD_CIN_LESSONS();
@@ -1215,7 +1264,7 @@ void RepeatLessons() {
     // TikTakToe();
     // MemoryMenegmentStack();
     // MemoryMenegmentHeap();
-    ClassesLessons();
+    // ClassesLessons();
     // StructLessons();
     // References();
     /* 
@@ -1223,6 +1272,9 @@ void RepeatLessons() {
         a.bar = 10;
         Func(a);
     */
+
+
+
 
 
 }
