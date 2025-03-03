@@ -1203,24 +1203,50 @@ class Person {
         std::string LastName;   
         Address homeAddress;
         Person(std::string f, std::string l) : firstName(f), LastName(l), homeAddress("street", "city", "country", 1) { 
-            std::cout << "Person created: " << firstName << " " << LastName << std::endl;
+            std::cout << "Person Initialize: " << std::endl;
+        };
+
+        Person(const Person &copyObj) : homeAddress(copyObj.homeAddress) {
+            std::cout << "copy constructor Person: " << std::endl;
+        };
+
+        virtual void print() {
+            std::cout << firstName << " " << LastName << std::endl;
         }
-        void print() {
-            std::cout << firstName << LastName << std::endl;
-        }
-        // friend class Employee;
+        friend class Employee;
 };
 
 class Employee : public Person {
     public:
         float salary;
         Employee(std::string f, std::string l, float s) : salary(s), Person(f, l) {
-            // std::cout << "Employee created: " << salary << std::endl;
-            std::cout << "Employee created: " << bar << std::endl;
-        }
+            // std::cout << "Employee Initialize: " << bar << std::endl;
+            std::cout << "Employee Initialize: " << std::endl;
+        };
+
+        Employee(const Person &copyObj) : Person(copyObj) {
+            std::cout << "copy constructor Employee: " << std::endl;
+        };
+        void print() {
+            Person::print();
+            std::cout << "Salary: " << salary << std::endl;
+        };
 };
+
+void barev(Person &p) {
+    p.print();
+}
+
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
+
+    /* OOP lessons */ 
+    // Person person1("Paruyr","Sevak");
+    // person1.print();
+
+    Employee employee1("Davit","Torgomyan",5000);
+    // employee1.print();
+    barev(employee1);
 
     /* Copy Constructor*/
     // CopyConstructors a;
@@ -1231,12 +1257,7 @@ void RepeatLessons() {
     // std::cout << "CopyConstructors a" << std::endl;
 
 
-    /* OOP lessons */ 
-    // Person person1("Paruyr","Sevak");
-    // person1.print();
 
-    Employee employee1("Davit","Torgomyan",5000);
-    // person1.print();
 
 
     // STD_CIN_LESSONS();
