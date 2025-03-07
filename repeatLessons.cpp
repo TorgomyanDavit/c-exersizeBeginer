@@ -1193,7 +1193,20 @@ class Address {
         }
 };
 
-class Person {
+class Animal {
+    public:
+        std::string name;
+        int age;
+        Animal(std::string name, int age): name(name), age(age) {
+            // std::cout << "Person created: " << street << " " << city << std::endl;
+        }
+        void print() {
+            std::cout << name << age << std::endl;
+        }
+
+};
+
+class Person : Animal {
     private:
         int foo;
     protected:
@@ -1202,21 +1215,28 @@ class Person {
         std::string firstName;
         std::string LastName;   
         Address homeAddress;
-        Person(std::string f, std::string l) : firstName(f), LastName(l), homeAddress("street", "city", "country", 1) { 
+        Person(std::string f, std::string l) : firstName(f), LastName(l), homeAddress("street", "city", "country", 1),Animal("Katu", 10) { 
             std::cout << "Person Initialize: " << std::endl;
         };
 
-        Person(const Person &copyObj) : homeAddress(copyObj.homeAddress) {
+        Person(const Person &copyObj) : homeAddress(copyObj.homeAddress), Animal("Katu", 10) {
             std::cout << "copy constructor Person: " << std::endl;
         };
 
         virtual void print() {
-            std::cout << firstName << " " << LastName << std::endl;
+            std::cout << "Person Print" << firstName << " " << LastName << std::endl;
         }
         friend class Employee;
 };
 
-class Employee : public Person {
+class Hopar {
+    public:
+        void print() {
+            std::cout << "asaBarev" << std::endl;
+        }
+}; 
+
+class Employee : public Person, public Hopar {
     public:
         float salary;
         Employee(std::string f, std::string l, float s) : salary(s), Person(f, l) {
@@ -1228,6 +1248,7 @@ class Employee : public Person {
             std::cout << "copy constructor Employee: " << std::endl;
         };
         void print() {
+            Hopar::print();
             Person::print();
             std::cout << "Salary: " << salary << std::endl;
         };
@@ -1237,6 +1258,59 @@ void barev(Person &p) {
     p.print();
 }
 
+
+void PolymorfizmFoo(int a) {
+    std::cout << "Integer " << a << std::endl;
+}
+
+void PolymorfizmFoo(double a) {
+    std::cout << "Integer " << a << std::endl;
+}
+
+void PolymorfizmFoo(int a,int b) {
+    std::cout << "total is " << a + b <<std::endl;
+}
+
+void PolymorfizmFoo(std::string a,std::string b) {
+    std::cout << "total is " << a + b <<std::endl;
+}
+
+class cars {
+    public:
+        std::string name;
+        cars(std::string name, int year): name(name) {
+            // std::cout << "Person created: " << street << " " << city << std::endl;
+        }
+        void print() {
+            std::cout << name << std::endl;
+        }
+};
+
+class BMW   {
+    public:
+        std::string name;
+        BMW(std::string name, int year): name(name) {
+            // std::cout << "Person created: " << street << " " << city << std::endl;
+        }
+        void print() {
+            std::cout << name << std::endl;
+        }
+};
+
+void Polymorfizm() {
+    // int a = 3;
+    // int b = 83;
+    // int c = a + b;   
+    // std::string d = "barev ";
+    // std::string e = "dzez";
+    // std::string f = d + e;
+    // std::cout << f << std::endl;
+    // PolymorfizmFoo(5);
+    // PolymorfizmFoo(5.5);
+    // PolymorfizmFoo(5,15);
+    // PolymorfizmFoo("barev","dzez");
+};
+
 void RepeatLessons() {
     std::cout << "=== Start Lessons 2 ===" << std::endl;
 
@@ -1244,9 +1318,17 @@ void RepeatLessons() {
     // Person person1("Paruyr","Sevak");
     // person1.print();
 
-    Employee employee1("Davit","Torgomyan",5000);
+    // Employee employee1("Davit","Torgomyan",5000);
     // employee1.print();
-    barev(employee1);
+    // employee1.asaBarev();
+    // barev(employee1);
+
+
+    /* OOP Polymorfizm*/
+    Polymorfizm();
+
+
+
 
     /* Copy Constructor*/
     // CopyConstructors a;
