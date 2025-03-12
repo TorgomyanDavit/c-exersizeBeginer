@@ -1275,29 +1275,40 @@ void PolymorfizmFoo(std::string a,std::string b) {
     std::cout << "total is " << a + b <<std::endl;
 }
 
-class cars {
+class PolymorfizmCars {
     public:
         std::string name;
-        cars(std::string name, int year): name(name) {
+        PolymorfizmCars(std::string name): name(name) {
             // std::cout << "Person created: " << street << " " << city << std::endl;
         }
-        void print() {
-            std::cout << name << std::endl;
+        virtual void print() {
+            std::cout << "name " << name << std::endl;
         }
 };
 
-class BMW   {
+class BMW : public PolymorfizmCars  {
     public:
-        std::string name;
-        BMW(std::string name, int year): name(name) {
-            // std::cout << "Person created: " << street << " " << city << std::endl;
+        float salary;
+        BMW(std::string name, float salary): PolymorfizmCars(name), salary(salary) {
+            std::cout << "BMW: Constructor" << std::endl;
         }
         void print() {
-            std::cout << name << std::endl;
+            std::cout << "salary " << salary << std::endl;
+            PolymorfizmCars::print();
         }
 };
+
+void PolymorfizmClassFoo(PolymorfizmCars &p) {
+    p.print();
+}
+
 
 void Polymorfizm() {
+    BMW a("BMW X5",5000);
+    PolymorfizmClassFoo(a);
+    // a.print();
+
+
     // int a = 3;
     // int b = 83;
     // int c = a + b;   
@@ -1309,6 +1320,9 @@ void Polymorfizm() {
     // PolymorfizmFoo(5.5);
     // PolymorfizmFoo(5,15);
     // PolymorfizmFoo("barev","dzez");
+
+
+
 };
 
 void RepeatLessons() {
