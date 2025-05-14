@@ -1286,6 +1286,7 @@ class PolymorfizmCars {
         }
 };
 
+
 class BMW : public PolymorfizmCars  {
     public:
         float salary;
